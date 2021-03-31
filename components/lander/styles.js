@@ -17,10 +17,10 @@ export const Container = styled.div`
 
     video{
         position: absolute; 
-        width: 600px;
-        height: 338px;
-        top: calc(50vh - 169px);
-        left: calc(50vw - 300px);
+        width: 900px;
+        height: 507px;
+        top: calc(50vh - 238px);
+        left: calc(50vw - 450px);
         background-size: cover;
         overflow: hidden;
         z-index: 0;
@@ -37,10 +37,11 @@ export const Content = styled.div`
     h1{
         margin-bottom: 5px;
         text-shadow: 5px 5px 5px ${theme.black};
+        font-size: 32px;
     }
 
     p{
-        font-size: 8px;
+        font-size: 10px;
         margin: 0px auto;
         text-shadow: 5px 5px 5px ${theme.black};
     }
