@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import Title from '../../media/svg/title.svg';
 
 //Styled Components
-import {Container, Content, Outline} from './styles';
+import {Container, Content} from './styles';
 
 //Functional Components
 import {Cursor} from './cursor';
@@ -12,12 +13,9 @@ const Lander = () => {
     
     return (
         <Container>
-            <video autoPlay muted loop id="myVideo">
-                <source src="/back.mp4" type="video/mp4"/>
-            </video>
             <Content>
-                <h1>THESINNERSPRODIGY</h1>
-                <p>MADE BY GILLES SCHEPERS</p>
+                {/* TITEL */}
+                <Title/>
                 <Cursor/>
             </Content>
         </Container>

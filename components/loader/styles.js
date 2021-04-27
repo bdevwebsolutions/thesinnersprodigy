@@ -8,38 +8,43 @@ export const Container = styled.div`
     max-height: 100vh;
     box-sizing: border-box;
 
-    background-color: ${theme.black};
-    color: ${theme.white};
+    background-color: ${theme.white};
+    color: ${theme.black};
     display: grid;
     justify-items: center;
     align-content: center;
 
-    font-size: 68px;
+    svg{
+        width: 80px;
+        height: 80px;
+        color: black;
+    }
 
     @keyframes svgAnimation{
         0%{
             stroke-dashoffset: 1200;
-
+            fill: transparent;
         }
         50%{
             stroke-dashoffset: 0;
-
+            fill: transparent;
         }
         100%{
-            stroke-dashoffset: 1200;
-
+            fill: black;
+            stroke-dashoffset: 0;
         }
     }
 
+
     path{
         fill: transparent;
-        stroke-width: 5;
-        stroke: #FFFFFF;
+        stroke-width: 2;
+        stroke: ${theme.black};
 
         stroke-dasharray: 1200;
         stroke-dashoffset: 1200;
 
-        animation: svgAnimation 3s ease forwards;
+        animation: svgAnimation 3.2s ease;
     }
 
 

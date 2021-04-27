@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {theme} from '../../styles/theme';
-import {GiBowieKnife, GiAk47, GiSpikedBat} from 'react-icons/gi';
 
 export const Container = styled.div`
 
@@ -9,8 +8,8 @@ export const Container = styled.div`
     max-height: 100vh;
     box-sizing: border-box;
 
-    background-color: ${theme.black};
-    color: ${theme.white};
+    background-color: ${theme.white};
+    color: ${theme.black};
     display: grid;
     justify-items: center;
     align-content: center;
@@ -33,31 +32,27 @@ export const Content = styled.div`
     padding: 120px;
     overflow: hidden;
     z-index: 1;
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
 
-    h1{
-        margin-bottom: 5px;
-        text-shadow: 5px 5px 5px ${theme.black};
-        font-size: 32px;
-    }
-
-    p{
-        font-size: 10px;
+    svg{
+        max-width: 400px;
         margin: 0px auto;
-        text-shadow: 5px 5px 5px ${theme.black};
-    }
 
+    }
 `
 
 export const CursorContainer = styled.div`
 
     p{
         margin-top: 40px;
-        text-shadow: 5px 5px 5px ${theme.black};
+        text-shadow: 5px 5px 5px ${theme.white};
     }
 
     button {
-        color: white;
-        background-color: rgba(0,0,0,0);
+        color: ${theme.black};
+        background-color: white;
 
         width: 60px;
         height: 60px;
@@ -76,7 +71,7 @@ export const CursorContainer = styled.div`
         :active{
             outline: none;
         }
-        text-shadow: 5px 5px 5px ${theme.black};
+        text-shadow: 5px 5px 5px ${theme.white};
     }
 
     button:nth-of-type(2){
