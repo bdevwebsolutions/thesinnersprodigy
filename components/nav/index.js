@@ -11,7 +11,7 @@ import {RiArrowDownSFill, RiArrowRightSFill} from 'react-icons/ri';
 
 const Nav = () => {
 
-    const [toggleCollaps, setToggleCollaps] = React.useState(false);
+    const [toggleCollaps, setToggleCollaps] = React.useState(true);
 
     return(
         <Container>

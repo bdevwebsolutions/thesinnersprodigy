@@ -11,7 +11,6 @@ export const Container = styled.div`
     height: ${props => props.trigger ? "620px" : "0px"};
 
     overflow: hidden;
-    border-bottom: ${props => props.trigger ? "none" : "solid 1px lightgray" };
 ` 
 
 export const Sub = styled.div`
