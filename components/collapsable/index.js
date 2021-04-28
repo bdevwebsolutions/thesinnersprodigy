@@ -21,7 +21,7 @@ const Collapsable = ({visible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        <Image priority={true} src="/pictures/1.jpg" layout="fill" objectFit="cover" quality={30}/>
+                        <Image  src="/pictures/1-min.jpg" layout="fill" objectFit="cover" quality={1}/>
                     </Preview>
                 </Sub>
                 <Sub>
@@ -36,7 +36,7 @@ const Collapsable = ({visible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        <Image priority={true} src="/pictures/3.jpg" layout="fill" objectFit="cover" quality={30}/>
+                        <Image  src="/pictures/3-min.jpg" layout="fill" objectFit="cover" quality={1}/>
                     </Preview>
                 </Sub>
                 <Sub>
@@ -51,7 +51,7 @@ const Collapsable = ({visible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        <Image priority={true} src="/pictures/2.jpg" layout="fill" objectFit="cover" quality={30}/>
+                        <Image  src="/pictures/2-min.jpg" layout="fill" objectFit="cover" quality={1}/>
                     </Preview>
                 </Sub>
                 <Sub>
@@ -64,7 +64,7 @@ const Collapsable = ({visible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        <Image priority={true} src="/pictures/4.jpg" layout="fill" objectFit="cover" quality={30}/>
+                        <Image  src="/pictures/4-min.jpg" layout="fill" objectFit="cover" quality={1}/>
                     </Preview>
                 </Sub>
             </Container>

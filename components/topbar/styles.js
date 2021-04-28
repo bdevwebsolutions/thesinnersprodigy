@@ -5,7 +5,7 @@ export const Container = styled.div`
 
     display: grid;
     grid-template-columns: 200px 1fr;
-    height: 80px;
+
     line-height: 80px;
     
     *{
@@ -16,6 +16,12 @@ export const Container = styled.div`
     padding: 15px;
     border-bottom: solid 1px lightgray;
 
+    @media only screen and (max-width: 526px){
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 80px;
+        height: auto;
+    }
+
 `
 
 export const Logo = styled.div`
@@ -24,6 +30,17 @@ export const Logo = styled.div`
         height: 35px;
         margin-top: 25px;
         cursor: pointer;
+
+
+    }
+
+    @media only screen and (max-width: 526px){
+        svg{
+            margin: 0px auto;
+            margin-top: 35px;
+            display: block;
+        }
+
     }
 
 `
@@ -34,5 +51,9 @@ export const Contact = styled.div`
 
     a{
         font-weight: bold;
+    }
+
+    @media only screen and (max-width: 526px){
+        text-align: center;
     }
 `

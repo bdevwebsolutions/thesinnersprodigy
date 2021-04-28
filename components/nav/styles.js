@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import {theme} from '../../styles/theme';
 
 export const Container = styled.div`
-
     
     *{
         display: inline-block;
@@ -34,8 +33,8 @@ export const Container = styled.div`
     @media only screen and (max-width: 720px){
         ul{
             flex-direction: column;
-            text-align: center;
-            margin: 0px auto;
+            text-align: left;
+            width: 100%;
 
             li{
                 padding: 10px 0px;
