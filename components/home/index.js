@@ -10,12 +10,7 @@ import Logo from '../../media/svg/logo.svg'
 //SLIDESHOW
 const SlideShow = () => {
 
-    const [urls, setUrls] = React.useState([
-        '/pictures/slide/1.jpg',
-        '/pictures/slide/2.jpg',
-        '/pictures/slide/3.jpg',
-        '/pictures/slide/4.jpg',
-    ])
+    
 
 
     //<Image priority={true} src={urls[0]} layout="fill" objectFit="cover" quality={30}/>
@@ -25,16 +20,16 @@ const SlideShow = () => {
         <SlideContainer>
             <Carousel showThumbs={false} showStatus={false}>
                 <Slide>
-                    <Image priority={true} src={urls[0]} layout="fill" objectFit="cover" quality={1}/>
+                    {/*<Image priority={true} src={urls[0]} layout="fill" objectFit="cover" quality={1}/>*/}
                 </Slide>
                 <Slide>
-                    <Image priority={true} src={urls[1]} layout="fill" objectFit="cover" quality={1}/>
+                IMAGE
                 </Slide>
                 <Slide>
-                    <Image priority={true} src={urls[2]} layout="fill" objectFit="cover" quality={1}/>
+                IMAGE
                 </Slide>
                 <Slide>
-                    <Image priority={true} src={urls[3]} layout="fill" objectFit="cover" quality={1}/>
+                IMAGE
                 </Slide>
             </Carousel>
         </SlideContainer>
@@ -59,15 +54,15 @@ const Higlights = () => {
     return (
         <HighlightContainer>
             <HighLight>
-                <Image priority={true} src={'/pictures/highlight/1.jpg'} layout="fill" objectFit="cover" quality={1}/>
+                {/*<Image priority={true} src={'/pictures/highlight/1.jpg'} layout="fill" objectFit="cover" quality={1}/>*/}
                 
             </HighLight>
             <HighLight>
-                <Image priority={true} src={'/pictures/highlight/2.jpg'} layout="fill" objectFit="cover" quality={1}/>
+                IMAGE
                 
             </HighLight>
             <HighLight>
-                <Image priority={true} src={'/pictures/highlight/3.jpg'} layout="fill" objectFit="cover" quality={1}/>
+                IMAGE
             </HighLight>
             <Text><p>GREY CHAOS HOODIE</p><span>€50.00</span></Text>
             <Text><p>BLACK CHAOS HOODIE</p><span>€50.00</span></Text>

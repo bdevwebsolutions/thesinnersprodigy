@@ -12,6 +12,7 @@ export const Container = styled.div`
     z-index: 10;
     background-color: ${theme.white};
     padding: 15px !important;
+    transition-duration: 0.2s;
 
     p{
         display: block;
@@ -27,12 +28,19 @@ export const Container = styled.div`
 
 `
 
+export const List = styled.div`
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 80px);
+    overflow: scroll;
+    overflow-x: hidden;
+
+`
+
 export const Item = styled.div`
     width: 100%;
-
-    *{
-        display: block;
-    }
+    border: solid 1px red;
 `
 
 export const Checkout = styled.div`

@@ -25,7 +25,17 @@ export const Container = styled.div`
             cursor: pointer;
         }
 
+        a{
+            font-size: 13px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
         li:hover{
+            font-weight: bold;
+        }
+
+        a:hover{
             font-weight: bold;
         }
     }
@@ -37,6 +47,10 @@ export const Container = styled.div`
             width: 100%;
 
             li{
+                padding: 10px 0px;
+            }
+
+            a{
                 padding: 10px 0px;
             }
         }

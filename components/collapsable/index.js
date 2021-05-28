@@ -1,11 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 
 
 //Components
 import {Container, Sub, List, Preview} from './styles';
 
-const Collapsable = ({visible}) => {
+
+//DATA FETCHING
+import { getCollectionsByID, NAVID, getCollections } from '../../lib/shopify';
+import Link from 'next/link';
+
+
+//FETCH IMAGES FOR THE MENU
+
+
+const Collapsable = ({visible, setVisible}) => {
+
+        //IMAGES
+        const [URLS, setURLS] = useState([]);
+
+        useEffect(async () => {
+            let d = await getCollectionsByID(NAVID);
+            let urls = d.map(el => {
+                return el.images[0].src;
+            })
+            setURLS(urls)
+        }, [])
+        //--------------
+
+        //COLLECTIONS FOR ROUTING
+        const [collections, setCollections] = useState({men: [], woman: [], accessories: [], new: []});
+
+        useEffect(async () => {
+            let d = await getCollections();
+            //SPLIT INTO SUB
+            let res = {men: [], woman: [], accessories: [], new: []};
+
+            d.map(el => {
+                if(el.handle === "nav"){
+                    null
+                } else if (el.title.includes('Men')){
+                    res.men.push(el)
+                } else if (el.title.includes('Woman')){
+                    res.woman.push(el)
+                } else if (el.title.includes('Accessories')){
+                    res.accessories.push(el)
+                } else {
+                    res.new.push(el);
+                }
+            })
+
+            setCollections(res);
+
+        }, [])
+
 
         return (
             <Container trigger={visible}>
@@ -13,58 +61,68 @@ const Collapsable = ({visible}) => {
                     <List>
                         <p>NEW ARRIVALS</p>
                         <ul>
-                            <li>Shirts</li>
-                            <li>Sweats</li>
-                            <li>Pants</li>
-                            <li>Caps</li>
-                            <li>Accessories</li>
+                            {collections.new.map(el => {
+                                return <Link 
+                                            key={el.handle} 
+                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                                <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
+                                        </Link>
+                            })}
                         </ul>
                     </List>
                     <Preview>
-                        <Image  src="/pictures/1-min.jpg" layout="fill" objectFit="cover" quality={1}/>
+                        {URLS.length > 0 ? <Image src={URLS[0]} layout="fill" objectFit="cover"/> : "LOADING..."}
                     </Preview>
                 </Sub>
                 <Sub>
                     <List>
                         <p>MEN</p>
                         <ul>
-                            <li>Shirts</li>
-                            <li>Sweats</li>
-                            <li>Pants</li>
-                            <li>Caps</li>
-                            <li>Accessories</li>
+                        {collections.men.map(el => {
+                                return <Link 
+                                            key={el.handle} 
+                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                                <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
+                                        </Link>
+                            })}
                         </ul>
                     </List>
                     <Preview>
-                        <Image  src="/pictures/3-min.jpg" layout="fill" objectFit="cover" quality={1}/>
+                        {URLS.length > 0 ? <Image src={URLS[1]} layout="fill" objectFit="cover"/> : "LOADING..."}
                     </Preview>
                 </Sub>
                 <Sub>
                     <List>
                         <p>WOMAN</p>
                         <ul>
-                            <li>Shirts</li>
-                            <li>Sweaters</li>
-                            <li>Pants</li>
-                            <li>Caps</li>
-                            <li>Accessories</li>
+                            {collections.woman.map(el => {
+                                return <Link 
+                                            key={el.handle} 
+                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                                <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
+                                        </Link>
+                            })}
                         </ul>
                     </List>
                     <Preview>
-                        <Image  src="/pictures/2-min.jpg" layout="fill" objectFit="cover" quality={1}/>
+                        {URLS.length > 0 ? <Image src={URLS[2]} layout="fill" objectFit="cover"/> : "LOADING..."}
                     </Preview>
                 </Sub>
                 <Sub>
                     <List>
                         <p>ACCESSORIES</p>
                         <ul>
-                            <li>Caps</li>
-                            <li>Chains</li>
-                            <li>Bracelets</li>
+                        {collections.accessories.map(el => {
+                                return <Link 
+                                            key={el.handle} 
+                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                                <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
+                                        </Link>
+                        })}
                         </ul>
                     </List>
                     <Preview>
-                        <Image  src="/pictures/4-min.jpg" layout="fill" objectFit="cover" quality={1}/>
+                        {URLS.length > 0 ? <Image src={URLS[3]} layout="fill" objectFit="cover"/> : "LOADING..."}
                     </Preview>
                 </Sub>
             </Container>

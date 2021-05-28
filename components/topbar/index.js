@@ -18,7 +18,7 @@ const TopBar = () => {
                 <Link href="/home"><Title/></Link>
             </Logo>
             <Contact>
-                <p>For sales and more info contact us on  <a href="https://www.instagram.com/thesinnersprodigy/" target="_blank">instagram <AiFillInstagram/></a></p>
+                <p>For more info contact us on <a href="https://www.instagram.com/thesinnersprodigy/" target="_blank">instagram <AiFillInstagram/></a></p>
             </Contact>
         </Container>
     )

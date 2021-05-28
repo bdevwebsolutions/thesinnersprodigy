@@ -3,14 +3,15 @@ import styled from 'styled-components';
 export const Container = styled.div`
 
     
-    transition: 0.25s ease-out !important;
+    transition: 0.4s !important;
     width: 100%;
 
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 15px;
 
-    height: ${props => props.trigger ? "620px" : "0px"};
+    height: "auto";
+    max-height: ${props => props.trigger ? "1200px" : "0px"};
 
     overflow: hidden;
 
@@ -25,11 +26,14 @@ export const Container = styled.div`
         grid-template-rows: 1fr 1fr 1fr 1fr;
         height: ${props => props.trigger ? "1400px" : "0px"};
     }
+
+    border-bottom: solid 1px lightgrey;
+    padding-bottom: ${props => props.trigger ? "15px !important" : "0px" }; 
 ` 
 
 export const Sub = styled.div`
     display: grid;
-    grid-template-rows: 1fr 450px;
+    grid-template-rows: auto 450px;
 
     @media only screen and (max-width: 1200px){
         grid-template-rows: auto 200px;
@@ -39,6 +43,7 @@ export const Sub = styled.div`
     @media only screen and (max-width: 1200px){
         grid-template-rows: auto 160px;
     }
+
 `
 
 export const List = styled.div`
@@ -59,13 +64,18 @@ export const List = styled.div`
         li{
             padding: 5px 0px;
         }
+
+        a {
+            padding: 5px 0px; 
+        }
     }
+    
 `
 
 export const Preview = styled.div`
     position: relative;
     width: 100%;
-    height: 450px;
+    height: auto;
 
     @media only screen and (max-width: 1200px){
         height: 200px;
@@ -74,4 +84,5 @@ export const Preview = styled.div`
     @media only screen and (max-width: 1200px){
         height: 160px;
     }
+
 `

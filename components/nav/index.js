@@ -8,24 +8,31 @@ import Cart from '../cart';
 
 //media
 import {RiArrowDownSFill, RiArrowRightSFill} from 'react-icons/ri';
+import { CartContext } from '../../context/cartContext';
 
 
 const Nav = () => {
 
+    const {cart} = React.useContext(CartContext);
+    const [amount, setAmount] = React.useState(0);
     const [toggleCollaps, setToggleCollaps] = React.useState(false);
     const [toggleCart, setToggleCart] = React.useState(false);
+
+    React.useEffect(() => {
+        setAmount(cart.length)
+    }, [cart])
 
     return(
         <Container>
             <ul>
                 <li onClick={() => {setToggleCollaps(!toggleCollaps)}}>shop {toggleCollaps ? <RiArrowDownSFill/> : <RiArrowRightSFill/>}</li>
-                <li><a href="/media">media</a></li>
-                <li><a href="/brand">brand</a></li>
-                <li><a href="/login">login</a></li>
-                <li onClick={() => {setToggleCart(!toggleCart)}}>cart</li>
+                <Link href="/media">media</Link>
+                <Link href="/brand">brand</Link>
+                <Link href="/login">login</Link>
+                <li onClick={() => {setToggleCart(!toggleCart)}}>cart <b>{amount > 0 ? amount : ""}</b></li>
             </ul>
             {/*Collapsable container */}
-            <Collapsable visible={toggleCollaps}/>
+            <Collapsable visible={toggleCollaps} setVisible={setToggleCollaps}/>
             <Cart visible={toggleCart} setVisible={setToggleCart}/>
         </Container>
     )

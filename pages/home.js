@@ -1,12 +1,16 @@
-import React from 'react'
+import React  from 'react'
 import styled from 'styled-components';
+
 
 //Components
 import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import HomeContent from '../components/home';
 
+
+
 const Home = () => {
+
     return (
         <BodyContainer>
             <ResponsiveContainerFixed>
@@ -26,7 +30,6 @@ const BodyContainer = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     *{
         margin: 0;
         padding: 0;
