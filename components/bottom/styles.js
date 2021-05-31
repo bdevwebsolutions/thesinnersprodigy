@@ -19,6 +19,12 @@ export const Inner = styled.div`
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @media only screen and (max-width: 800px){
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 15px;
+    }
 `
 
 export const Sub = styled.div`
@@ -43,6 +49,16 @@ export const Sub = styled.div`
             :hover{
                 color: white;
             }
+        }
+    }
+
+    @media only screen and (max-width: 800px){
+        p{
+            text-align: left;
+        }
+
+        ul{
+            text-align: left;
         }
     }
 
