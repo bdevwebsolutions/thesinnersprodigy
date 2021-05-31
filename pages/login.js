@@ -14,7 +14,7 @@ const Login = () => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                <LoginContent/>
+                <p>* Our auth system will be coming soon.</p>
             </ResponsiveContainer>
         </BodyContainer>
     )
@@ -28,6 +28,7 @@ const BodyContainer = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    min-height: 100vh;
     *{
         margin: 0;
         padding: 0;

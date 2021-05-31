@@ -72,16 +72,6 @@ const Higlights = () => {
 }
 
 //SOCIAL
-const Socials = () => {
-    return(
-        <SocialsContainer>
-            <p>socials</p>
-            <p>become a promoter</p>
-            <p>contact</p>
-            <p>delivery and return policy</p>
-        </SocialsContainer>
-    )
-}
 
 
 const HomeContent = () => {
@@ -90,7 +80,6 @@ const HomeContent = () => {
         <SlideShow/>
         <About/>
         <Higlights/>
-        <Socials/>
     </Container>
     )
 }

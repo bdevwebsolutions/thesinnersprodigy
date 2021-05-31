@@ -1,11 +1,15 @@
+import React  from 'react'
 import styled from 'styled-components';
-import TopBar from '../../../components/topbar';
-import Nav from '../../../components/nav';
-import { getProductByID } from '../../../lib/shopify';
-import Product from '../../../components/product';
 
 
-const Item = (props) => {
+//Components
+import TopBar from '../components/topbar';
+import Nav from '../components/nav';
+import HomeContent from '../components/home';
+
+
+
+const Home = () => {
 
     return (
         <BodyContainer>
@@ -14,32 +18,11 @@ const Item = (props) => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                <Product product={props.product} />
+                promoter
             </ResponsiveContainer>
         </BodyContainer>
     )
 }
-
-export default Item;
-
-
-
-//DATA FETCHING
-
-export async function getServerSideProps(context) {
-    
-    
-    const {title, id} = context.params;
-
-    let product = await getProductByID(id);
-    product = JSON.parse(JSON.stringify(product))
-
-    
-    return {
-        props: {title, product}
-    }
-}
-
 
 
 const BodyContainer = styled.div`
@@ -48,7 +31,6 @@ const BodyContainer = styled.div`
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh;
-
     *{
         margin: 0;
         padding: 0;
@@ -70,3 +52,9 @@ const ResponsiveContainerFixed = styled.div`
     width: 95%;
     margin: 0px auto;
 `
+
+
+
+
+
+export default Home
