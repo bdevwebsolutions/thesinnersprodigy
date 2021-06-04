@@ -16,8 +16,8 @@ const Cart = ({visible, setVisible}) => {
 
         let f = d.map((el, index) => {
             return (
-                <Item>
-                    <p>{el[1]}</p>
+                <Item key={index}>
+                    <p>€{el[1]}</p>
                     <p>{el[2]}</p>
                     <button onClick={() => {removeFromCart(index)}}>X</button>
                 </Item>
