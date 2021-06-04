@@ -19,7 +19,6 @@ const Cart = ({visible, setVisible}) => {
                 <Item>
                     <p>{el[1]}</p>
                     <p>{el[2]}</p>
-                    <p>{index}</p>
                     <button onClick={() => {removeFromCart(index)}}>X</button>
                 </Item>
             )
