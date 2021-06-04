@@ -19,7 +19,7 @@ export const Container = styled.div`
         
     }
 
-    display: grid;
+    display: grid !important;
     grid-template-rows: 80px 1fr 60px 30px;
 
     @media only screen and (max-width: 400px){
@@ -40,7 +40,21 @@ export const List = styled.div`
 
 export const Item = styled.div`
     width: 100%;
-    border: solid 1px red;
+    display: grid !important;
+    padding: 15px !important;
+    grid-template-columns: auto 1fr 20px;
+    border-bottom: solid 1px black;
+    grid-gap: 10px;
+
+    button{
+        color: black;
+        border: none;
+        background-color: none;
+        :hover{
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
 `
 
 export const Checkout = styled.div`
