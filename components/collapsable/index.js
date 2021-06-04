@@ -45,7 +45,7 @@ const Collapsable = ({visible, setVisible}) => {
                     res.woman.push(el)
                 } else if (el.title.includes('Accessories')){
                     res.accessories.push(el)
-                } else {
+                } else if (el.title.includes('New')){
                     res.new.push(el);
                 }
             })

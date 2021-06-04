@@ -60,6 +60,10 @@ export const HighlightContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr; 
     grid-gap: 15px;
     margin-bottom: 100px !important;
+
+    @media only screen and (max-width: 900px){
+        grid-template-columns: 1fr;
+    }
 `
 
 export const HighLight = styled.div`

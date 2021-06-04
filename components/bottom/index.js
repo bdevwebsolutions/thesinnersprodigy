@@ -28,7 +28,7 @@ const BottomBar = () => {
             <Sub>
                <p>More</p>
                 <ul>
-                    <Link href="/">Prestige</Link>
+                    <Link href="/prestige">Prestige</Link>
                     <Link href="/policy#privacy">Privacy Policy</Link>
                     <Link href="/policy#deliveryandreturn">Delivery and return policy</Link>
                 </ul>

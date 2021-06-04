@@ -29,6 +29,7 @@ const Nav = () => {
                 <Link href="/media">media</Link>
                 <Link href="/brand">brand</Link>
                 <Link href="/login">login</Link>
+                <Link href="/prestige">prestige</Link>
                 <li onClick={() => {setToggleCart(!toggleCart)}}>cart <b>{amount > 0 ? amount : ""}</b></li>
             </ul>
             {/*Collapsable container */}

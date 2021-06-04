@@ -15,7 +15,7 @@ export const Container = styled.div`
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        max-width: 300px;
+        max-width: 350px;
         width: 100%;
         margin-bottom: 15px;
 
@@ -23,12 +23,22 @@ export const Container = styled.div`
             font-size: 13px;
             text-transform: uppercase;
             cursor: pointer;
+            margin-right: 5px !important;
         }
 
         a{
             font-size: 13px;
             text-transform: uppercase;
             cursor: pointer;
+            margin-right: 5px !important;
+        }
+
+        a:last-of-type{
+            font-weight: bold;
+            padding: 0px 5px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
         }
 
         li:hover{
@@ -48,10 +58,14 @@ export const Container = styled.div`
 
             li{
                 padding: 10px 0px;
+                display: block !important;
+                width: 100%;
             }
 
             a{
                 padding: 10px 0px;
+                display: block !important;
+                width: 100%;
             }
         }
     }

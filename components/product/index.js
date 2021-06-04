@@ -25,6 +25,7 @@ const Product = ({product}) => {
         let p = [variant, price, product.title]
         setCart([...cart, p]);
         setAdded(true);
+        setTimeout(function(){ setAdded(false)}, 1000);
     }
 
     //Get images and create gallery

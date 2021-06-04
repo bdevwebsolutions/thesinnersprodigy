@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import {Carousel} from 'react-responsive-carousel';
+import {getCollectionsByID} from '../../lib/shopify';
 //Styles
 import {Container, SlideContainer, Slide, AboutContainer, HighlightContainer, HighLight, Text, SocialsContainer} from './styles';
 
@@ -8,29 +9,28 @@ import {Container, SlideContainer, Slide, AboutContainer, HighlightContainer, Hi
 import Logo from '../../media/svg/logo.svg'
 
 //SLIDESHOW
-const SlideShow = () => {
+const SlideShow = ({image}) => {
 
-    
+    const [urls, setUrls] = React.useState([])
 
+    console.log("images: " + image)
+    React.useEffect(() => {
+        if(urls.length <= 0 ){
+            image.map(el => {
+                setUrls(prevState => [...prevState, el.images[0].src])
+            })
+        }
+    }, [])
 
-    //<Image priority={true} src={urls[0]} layout="fill" objectFit="cover" quality={30}/>
+    //<Image priority={true} src={urls[0]} layout="fill" objectFit="cover" ={30}/>
 
 
     return(
         <SlideContainer>
             <Carousel showThumbs={false} showStatus={false}>
-                <Slide>
-                    {/*<Image priority={true} src={urls[0]} layout="fill" objectFit="cover" quality={1}/>*/}
-                </Slide>
-                <Slide>
-                IMAGE
-                </Slide>
-                <Slide>
-                IMAGE
-                </Slide>
-                <Slide>
-                IMAGE
-                </Slide>
+                {urls ? urls.map(el => {
+                    return <Slide><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
+                }): null}
             </Carousel>
         </SlideContainer>
     )
@@ -50,23 +50,28 @@ const About = () => {
 }
 
 //Higlihhted pictures
-const Higlights = () => {
+const Higlights = ({image}) => {
+
+    const [urls, setUrls] = React.useState([])
+
+    React.useEffect(() => {
+        if(urls.length <= 0 ){
+            console.log(image)
+            image.map(el => {
+                setUrls(prevState => [...prevState, el.images[0].src])
+            })
+        }
+    }, [])
+
     return (
         <HighlightContainer>
-            <HighLight>
-                {/*<Image priority={true} src={'/pictures/highlight/1.jpg'} layout="fill" objectFit="cover" quality={1}/>*/}
-                
-            </HighLight>
-            <HighLight>
-                IMAGE
-                
-            </HighLight>
-            <HighLight>
-                IMAGE
-            </HighLight>
-            <Text><p>GREY CHAOS HOODIE</p><span>€50.00</span></Text>
-            <Text><p>BLACK CHAOS HOODIE</p><span>€50.00</span></Text>
-            <Text><p>PINK CHAOS HOODIE</p><span>€50.00</span></Text>
+            {urls ? urls.map(el =>{
+                return (
+                <HighLight>
+                    <Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/>
+                </HighLight>
+                )
+            }) : null}
         </HighlightContainer>
     )
 }
@@ -74,12 +79,14 @@ const Higlights = () => {
 //SOCIAL
 
 
-const HomeContent = () => {
+const HomeContent = ({items, community}) => {
+
+    console.log(community);
     return (
     <Container>
-        <SlideShow/>
+        <SlideShow image={items}/>
         <About/>
-        <Higlights/>
+        <Higlights image={community}/>
     </Container>
     )
 }

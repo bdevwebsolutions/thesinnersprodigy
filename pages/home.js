@@ -1,5 +1,6 @@
 import React  from 'react'
 import styled from 'styled-components';
+import {getCollections, getCollectionsByID} from '../lib/shopify';
 
 
 //Components
@@ -9,7 +10,9 @@ import HomeContent from '../components/home';
 
 
 
-const Home = () => {
+const Home = (props) => {
+
+    console.log(props)
 
     return (
         <BodyContainer>
@@ -18,12 +21,31 @@ const Home = () => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                <HomeContent/>
+                <HomeContent items={props.items} community={props.community}/>
             </ResponsiveContainer>
         </BodyContainer>
     )
 }
 
+export async function getServerSideProps(context) {
+    
+
+    //GET COLLECTON FROM ID
+    let community = await getCollectionsByID("Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2OTk2MzQ5MzU1OQ==");
+    community = JSON.parse(JSON.stringify(community))
+    let items = await getCollectionsByID("Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2OTk2MjUxMDUxOQ==");
+    items = JSON.parse(JSON.stringify(items))
+    console.log(items)
+
+    if(items.length === 0){
+        return {props: {noItems: true}};
+    }
+
+    
+    return {
+        props: {items, community}
+    }
+}
 
 const BodyContainer = styled.div`
 
