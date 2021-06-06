@@ -153,10 +153,10 @@ const Container = styled.div`
     max-width: 100%;
     height: 28px;
     overflow: hidden;
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px black;
     margin-bottom: 15px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: bold;
     
 `

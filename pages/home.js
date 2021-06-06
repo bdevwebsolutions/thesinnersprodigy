@@ -1,6 +1,6 @@
 import React  from 'react'
 import styled from 'styled-components';
-import {getCollections, getCollectionsByID} from '../lib/shopify';
+import {ItemsContext} from '../context/itemsContext';
 
 
 //Components
@@ -8,11 +8,13 @@ import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import HomeContent from '../components/home';
 
+//hoc
+import {WithData} from '../components/hoc/withData';
 
 
 const Home = (props) => {
 
-    console.log(props)
+    const {initialData} = React.useContext(ItemsContext);
 
     return (
         <BodyContainer>
@@ -21,30 +23,10 @@ const Home = (props) => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                <HomeContent items={props.items} community={props.community}/>
+                {initialData !== null ? <HomeContent items={initialData[2]} community={initialData[1]}/> : "loading..."}
             </ResponsiveContainer>
         </BodyContainer>
     )
-}
-
-export async function getServerSideProps(context) {
-    
-
-    //GET COLLECTON FROM ID
-    let community = await getCollectionsByID("Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2OTk2MzQ5MzU1OQ==");
-    community = JSON.parse(JSON.stringify(community))
-    let items = await getCollectionsByID("Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2OTk2MjUxMDUxOQ==");
-    items = JSON.parse(JSON.stringify(items))
-    console.log(items)
-
-    if(items.length === 0){
-        return {props: {noItems: true}};
-    }
-
-    
-    return {
-        props: {items, community}
-    }
 }
 
 const BodyContainer = styled.div`
@@ -78,4 +60,4 @@ const ResponsiveContainerFixed = styled.div`
 
 
 
-export default Home
+export default WithData(Home)

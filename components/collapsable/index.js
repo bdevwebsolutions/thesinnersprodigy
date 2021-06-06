@@ -7,8 +7,9 @@ import {Container, Sub, List, Preview} from './styles';
 
 
 //DATA FETCHING
-import { getCollectionsByID, NAVID, getCollections } from '../../lib/shopify';
+import { getCollections } from '../../lib/shopify';
 import Link from 'next/link';
+import { ItemsContext } from '../../context/itemsContext';
 
 
 //FETCH IMAGES FOR THE MENU
@@ -19,8 +20,11 @@ const Collapsable = ({visible, setVisible}) => {
         //IMAGES
         const [URLS, setURLS] = useState([]);
 
+        //CONTEXT
+        const {initialData} = React.useContext(ItemsContext);
+
         useEffect(async () => {
-            let d = await getCollectionsByID(NAVID);
+            let d = initialData[0];
             let urls = d.map(el => {
                 return el.images[0].src;
             })
@@ -33,10 +37,12 @@ const Collapsable = ({visible, setVisible}) => {
 
         useEffect(async () => {
             let d = await getCollections();
+            
             //SPLIT INTO SUB
             let res = {men: [], woman: [], accessories: [], new: []};
 
             d.map(el => {
+                console.log(el.title)
                 if(el.handle === "nav"){
                     null
                 } else if (el.title.includes('Men')){

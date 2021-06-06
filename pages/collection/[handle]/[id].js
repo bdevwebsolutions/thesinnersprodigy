@@ -5,6 +5,9 @@ import Nav from '../../../components/nav';
 import { getCollectionsByID } from '../../../lib/shopify';
 import { Collection, NoItem } from '../../../components/collections';
 
+//hoc
+import {WithData} from '../../../components/hoc/withData';
+
 
 const Items = (props) => {
 
@@ -74,4 +77,4 @@ const ResponsiveContainerFixed = styled.div`
 
 
 
-export default Items;
+export default WithData(Items);

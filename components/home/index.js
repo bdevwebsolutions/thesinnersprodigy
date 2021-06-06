@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
 import {Carousel} from 'react-responsive-carousel';
-import {getCollectionsByID} from '../../lib/shopify';
 //Styles
 import {Container, SlideContainer, Slide, AboutContainer, HighlightContainer, HighLight, Text, SocialsContainer} from './styles';
 
@@ -81,7 +80,6 @@ const Higlights = ({image}) => {
 
 const HomeContent = ({items, community}) => {
 
-    console.log(community);
     return (
     <Container>
         <SlideShow image={items}/>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { getProducts } from '../lib/shopify';
+import { testCOMMUNITY, getCollectionsByID, testHIGHLIGHT, testNAV, getCollections } from '../lib/shopify';
 
 
 export const ItemsContext = React.createContext(null);
@@ -8,17 +8,26 @@ export const ItemsContext = React.createContext(null);
 
 const ItemsProvider = ({children}) => {
 
-    const [STORE, SETSTORE] = React.useState(null)
+    const [initialData, setInitialData] = React.useState(null)
 
 
-    const fetchStore = async () => {
-        let d = await getProducts();
-        SETSTORE(d);
+    const fetchInitialData = async () => {
+        let nav = await getCollectionsByID(testNAV);
+        let community = await getCollectionsByID(testCOMMUNITY);
+        let highlight = await getCollectionsByID(testHIGHLIGHT);
+        setInitialData([nav, community, highlight]);
         return true;
     }
 
+    React.useEffect(async () => {
+        let nav = await getCollectionsByID(testNAV);
+        let community = await getCollectionsByID(testCOMMUNITY);
+        let highlight = await getCollectionsByID(testHIGHLIGHT);
+        setInitialData([nav, community, highlight]);
+    },[])
 
-    return <ItemsContext.Provider value={{STORE, SETSTORE, fetchStore}}>{children}</ItemsContext.Provider>
+
+    return <ItemsContext.Provider value={{initialData, setInitialData, fetchInitialData}}>{children}</ItemsContext.Provider>
 }
 
 export default ItemsProvider;

@@ -31,9 +31,9 @@ export const Sub = styled.div`
     display: block;
     p {
         margin: 5px 0px !important;
-        font-size: 13px;
+        font-size: 15px;
         text-align: center;
-        text-decoration: underline;
+        font-weight: bold;
     }
     ul{
         display: block;

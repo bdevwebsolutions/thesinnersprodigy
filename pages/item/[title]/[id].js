@@ -4,6 +4,9 @@ import Nav from '../../../components/nav';
 import { getProductByID } from '../../../lib/shopify';
 import Product from '../../../components/product';
 
+//hoc
+import {WithData} from '../../../components/hoc/withData';
+
 
 const Item = (props) => {
 
@@ -20,7 +23,7 @@ const Item = (props) => {
     )
 }
 
-export default Item;
+export default WithData(Item);
 
 
 

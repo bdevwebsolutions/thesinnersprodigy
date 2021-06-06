@@ -6,6 +6,9 @@ import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import LoginContent from '../components/login';
 
+//hoc
+import {WithData} from '../components/hoc/withData';
+
 const Login = () => {
     return (
         <BodyContainer>
@@ -20,7 +23,7 @@ const Login = () => {
     )
 }
 
-export default Login
+export default WithData(Login)
 
 
 const BodyContainer = styled.div`

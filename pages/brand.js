@@ -6,6 +6,9 @@ import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import BrandContent from '../components/brand';
 
+//hoc
+import {WithData} from '../components/hoc/withData';
+
 const Brand = () => {
     return (
         <BodyContainer>
@@ -20,7 +23,7 @@ const Brand = () => {
     )
 }
 
-export default Brand
+export default WithData(Brand)
 
 
 const BodyContainer = styled.div`

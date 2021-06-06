@@ -6,6 +6,9 @@ import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import MediaContent from '../components/media';
 
+//hoc
+import {WithData} from '../components/hoc/withData';
+
 const Media = () => {
 
     return (
@@ -21,7 +24,7 @@ const Media = () => {
     )
 }
 
-export default Media
+export default WithData(Media)
 
 
 const BodyContainer = styled.div`

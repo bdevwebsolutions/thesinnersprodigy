@@ -7,6 +7,9 @@ import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import HomeContent from '../components/home';
 
+//hoc
+import {WithData} from '../components/hoc/withData';
+
 
 
 const Home = () => {
@@ -126,4 +129,4 @@ const ResponsiveContainerFixed = styled.div`
 
 
 
-export default Home
+export default WithData(Home)

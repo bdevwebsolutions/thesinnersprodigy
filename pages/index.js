@@ -7,19 +7,23 @@ import styled from 'styled-components';
 import { Lander } from '../components/lander';
 import { Loader } from '../components/loader';
 import { ItemsContext } from '../context/itemsContext';
+import { getCollections } from '../lib/shopify';
+
 
 export default function Home() {
 
   const [loading, setLoading] = useState(true);
+  const {fetchInitialData} = useContext(ItemsContext);
   const router = useRouter();
-  //const {fetchStore} = useContext(ItemsContext);
+
 
   //TEMP REDIRECT
-  useEffect(() => {
-    if(!loading){
-      router.push('home')
+  useEffect(async() => {
+    let res = await fetchInitialData();
+    if(res){
+      router.push('/home');
     }
-  }, [loading])
+  }, [])
 
   return (
     <Container>
