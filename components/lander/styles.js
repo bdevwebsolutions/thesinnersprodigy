@@ -5,7 +5,6 @@ export const Container = styled.div`
 
     width: 100%;
     height: 100vh;
-    max-height: 100vh;
     box-sizing: border-box;
 
     background-color: ${theme.white};
@@ -13,17 +12,8 @@ export const Container = styled.div`
     display: grid;
     justify-items: center;
     align-content: center;
-
-    video{
-        position: absolute; 
-        width: 900px;
-        height: 507px;
-        top: calc(50vh - 238px);
-        left: calc(50vw - 450px);
-        background-size: cover;
-        overflow: hidden;
-        z-index: 0;
-    }
+    max-height: 100vh;
+    overflow: hidden;
 
 `
 export const Content = styled.div`
@@ -35,50 +25,83 @@ export const Content = styled.div`
     display: grid;
     width: 100%;
     max-width: 1200px;
+    grid-gap: 15px;
 
-    svg{
-        max-width: 400px;
+    svg:first-of-type{
+        max-width: 10%;
         margin: 0px auto;
+        opacity: 0;
+        animation-duration: 2s; /* the duration of the animation */
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-name: fadeIn;
 
     }
-`
 
-export const CursorContainer = styled.div`
-
-    p{
-        margin-top: 40px;
-        text-shadow: 5px 5px 5px ${theme.white};
+    svg:nth-of-type(2){
+        max-width: 80%;
+        margin: 0px auto;
+        opacity: 0;
+        animation-duration: 2s; /* the duration of the animation */
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-name: fadeIn;
     }
 
-    button {
-        color: ${theme.black};
+    svg:nth-of-type(3){
+        max-width: 40%;
+        margin: 0px auto;
+        opacity: 0;
+        animation-duration: 2s; /* the duration of the animation */
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-name: fadeIn;
+    }
+
+    button{
+        opacity: 0;
+        animation-duration: 2s; /* the duration of the animation */
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-name: fadeIn;
+
+        padding: 35px;
         background-color: white;
-
-        width: 60px;
-        height: 60px;
-        font-size: 32px;
-        line-height: 65px;
-        margin-top: 10px;
-        margin-right: 15px;
-        margin-left: 15px;
-        outline: none;
         border: none;
-        transition-duration: 0.2s;
-        :hover{
-            transform: rotate(20deg);
-        }
+        font-weight: bold;
         cursor: pointer;
-        :active{
-            outline: none;
-        }
-        text-shadow: 5px 5px 5px ${theme.white};
-    }
-
-    button:nth-of-type(2){
-
         :hover{
-            transform: rotate(-20deg);
+            text-decoration: line-through;
         }
     }
 
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 100;
+        }
+    }
+
+    @media only screen and (max-width: 900px){
+
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        svg:first-of-type{
+            max-width: 100%;
+            width: 80px;
+        }
+
+        svg:nth-of-type(2){
+            max-width: 100%;
+            width: 400px;
+        }
+
+        svg:nth-of-type(3){
+            max-width: 100%;
+            width: 300px;
+        }
+    }
 `

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-
-    
     transition: 0.4s !important;
     width: 100%;
 
@@ -50,10 +48,13 @@ export const Sub = styled.div`
 export const List = styled.div`
 
     p{
-        font-weight: bold;
+        
         font-size: 14px;
-        text-decoration: underline;
         text-align: left !important;
+        display: block;
+        color: gray;
+        text-decoration: underline;
+        
     }
 
     ul{
@@ -65,11 +66,13 @@ export const List = styled.div`
         li{
             padding: 5px 0px;
             font-size: 14px !important;
+            cursor: pointer;
         }
 
         a {
             padding: 5px 0px; 
             font-size: 12px !important;
+            cursor: pointer;
         }
     }
     

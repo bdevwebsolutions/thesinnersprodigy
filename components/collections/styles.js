@@ -19,9 +19,17 @@ export const Item = styled.div`
     }
     border-bottom: solid 1px lightgray;
 
+    opacity: 0.9;
+    transition-duration: 0.2s;
+    :hover{
+        opacity: 1;
+    }
+
+
 `
 
 export const Container = styled.div`
+    margin-bottom: 35px !important;
 `
 
 export const Title = styled.h3`
@@ -35,6 +43,7 @@ export const Grid = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
     margin-top: 35px;
+
 
     @media only screen and (max-width: 1200px){
         grid-template-columns: 1fr 1fr;

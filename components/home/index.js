@@ -11,8 +11,6 @@ import Logo from '../../media/svg/logo.svg'
 const SlideShow = ({image}) => {
 
     const [urls, setUrls] = React.useState([])
-
-    console.log("images: " + image)
     React.useEffect(() => {
         if(urls.length <= 0 ){
             image.map(el => {
@@ -27,8 +25,8 @@ const SlideShow = ({image}) => {
     return(
         <SlideContainer>
             <Carousel showThumbs={false} showStatus={false}>
-                {urls ? urls.map(el => {
-                    return <Slide><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
+                {urls ? urls.map((el, index) => {
+                    return <Slide><p>{image[index].title}</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
                 }): null}
             </Carousel>
         </SlideContainer>
@@ -63,7 +61,7 @@ const Higlights = ({image}) => {
     }, [])
 
     return (
-        <HighlightContainer>
+        <HighlightContainer amount={urls.length}>
             {urls ? urls.map(el =>{
                 return (
                 <HighLight>

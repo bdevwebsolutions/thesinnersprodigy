@@ -14,6 +14,25 @@ export const Slide = styled.div`
     position: relative;
     width: 100%;
     height: 640px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    :hover{
+            p{
+                opacity: 1;
+            }
+    }
+
+    p{
+        position: absolute;
+        z-index: 10;
+        color: white;
+        padding: 15px;
+        background-color: black;
+        opacity: 0.4;
+        cursor: default;
+    }
 `
 //-------------
 
@@ -57,7 +76,8 @@ export const AboutContainer = styled.div`
 export const HighlightContainer = styled.div`
 
     display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: ${props => `repeat(${props.amount}, 1fr)`};
+    grid-template-rows: 1fr;
     grid-gap: 15px;
     margin-bottom: 100px !important;
 

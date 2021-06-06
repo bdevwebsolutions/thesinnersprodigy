@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(async() => {
     let res = await fetchInitialData();
     if(res){
-      router.push('/home')
+      setLoading(false);
     }
   }, [])
 

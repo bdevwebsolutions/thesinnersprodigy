@@ -64,18 +64,6 @@ export const Placer = styled.div`
             font-weight: bold;
         }
     }
-`
-
-export const Container = styled.div`
-    
-    *{
-        display: inline-block;
-    }
-
-    overflow: hidden;
-    padding: 15px 0px !important;
-
-
 
     @media only screen and (max-width: 720px){
         ul{
@@ -90,11 +78,33 @@ export const Container = styled.div`
             }
 
             a{
-                padding: 10px 0px;
+                padding: 10px 5px;
                 display: block !important;
                 width: 100%;
             }
+
         }
+
+        p{
+            display: none!important;
+        }
+        grid-template-columns: 1fr;
     }
+
+
+`
+
+export const Container = styled.div`
+    
+    *{
+        display: inline-block;
+    }
+
+    overflow: hidden;
+    padding: 15px 0px !important;
+
+
+
+
 
 `

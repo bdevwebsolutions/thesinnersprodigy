@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import {theme} from '../../styles/theme';
 
 export const Container = styled.div`
-    margin-top: 60px !important;
+    margin-top: 30px !important;
     display: grid;
     grid-template-rows: 1fr;
 
-    line-height: 120px;
+    line-height: 60px;
     
     *{
         display: inline-block;
