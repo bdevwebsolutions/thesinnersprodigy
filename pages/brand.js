@@ -5,12 +5,15 @@ import styled from 'styled-components';
 import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import BrandContent from '../components/brand';
+import {Marq} from '../components/marque';
 
 //hoc
 import {WithData} from '../components/hoc/withData';
 
 const Brand = () => {
     return (
+        <>
+        <Marq/>
         <BodyContainer>
             <ResponsiveContainerFixed>
                 <TopBar/>
@@ -20,6 +23,7 @@ const Brand = () => {
                 <BrandContent/>
             </ResponsiveContainer>
         </BodyContainer>
+        </>
     )
 }
 

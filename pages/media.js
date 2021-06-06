@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import MediaContent from '../components/media';
+import {Marq} from '../components/marque';
 
 //hoc
 import {WithData} from '../components/hoc/withData';
@@ -12,6 +13,8 @@ import {WithData} from '../components/hoc/withData';
 const Media = () => {
 
     return (
+        <>
+        <Marq/>
         <BodyContainer>
             <ResponsiveContainerFixed>
                 <TopBar/>
@@ -21,6 +24,7 @@ const Media = () => {
                 <MediaContent/>
             </ResponsiveContainer>
         </BodyContainer>
+        </>
     )
 }
 

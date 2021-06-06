@@ -4,6 +4,7 @@ import TopBar from '../../../components/topbar';
 import Nav from '../../../components/nav';
 import { getCollectionsByID } from '../../../lib/shopify';
 import { Collection, NoItem } from '../../../components/collections';
+import {Marq} from '../../../components/marque';
 
 //hoc
 import {WithData} from '../../../components/hoc/withData';
@@ -12,6 +13,8 @@ import {WithData} from '../../../components/hoc/withData';
 const Items = (props) => {
 
     return (
+        <>
+        <Marq/>
         <BodyContainer>
             <ResponsiveContainerFixed>
                 <TopBar/>
@@ -21,6 +24,7 @@ const Items = (props) => {
                 {props.noItems ? <NoItem/> : <Collection items={props.items} title={props.title}/>}
             </ResponsiveContainer>
         </BodyContainer>
+        </>
     )
 }
 

@@ -7,6 +7,7 @@ import {ItemsContext} from '../context/itemsContext';
 import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import HomeContent from '../components/home';
+import {Marq} from '../components/marque';
 
 //hoc
 import {WithData} from '../components/hoc/withData';
@@ -17,6 +18,8 @@ const Home = (props) => {
     const {initialData} = React.useContext(ItemsContext);
 
     return (
+        <>
+        <Marq/>
         <BodyContainer>
             <ResponsiveContainerFixed>
                 <TopBar/>
@@ -26,6 +29,7 @@ const Home = (props) => {
                 {initialData !== null ? <HomeContent items={initialData[2]} community={initialData[1]}/> : "loading..."}
             </ResponsiveContainer>
         </BodyContainer>
+        </>
     )
 }
 

@@ -3,6 +3,7 @@ import TopBar from '../../../components/topbar';
 import Nav from '../../../components/nav';
 import { getProductByID } from '../../../lib/shopify';
 import Product from '../../../components/product';
+import {Marq} from '../../../components/marque';
 
 //hoc
 import {WithData} from '../../../components/hoc/withData';
@@ -11,6 +12,8 @@ import {WithData} from '../../../components/hoc/withData';
 const Item = (props) => {
 
     return (
+        <>
+        <Marq/>
         <BodyContainer>
             <ResponsiveContainerFixed>
                 <TopBar/>
@@ -20,6 +23,7 @@ const Item = (props) => {
                 <Product product={props.product} />
             </ResponsiveContainer>
         </BodyContainer>
+        </>
     )
 }
 

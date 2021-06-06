@@ -5,12 +5,15 @@ import styled from 'styled-components';
 import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import LoginContent from '../components/login';
+import {Marq} from '../components/marque';
 
 //hoc
 import {WithData} from '../components/hoc/withData';
 
 const Login = () => {
     return (
+        <>
+        <Marq/>
         <BodyContainer>
             <ResponsiveContainerFixed>
                 <TopBar/>
@@ -20,6 +23,7 @@ const Login = () => {
                 <p>* Our auth system will be coming soon.</p>
             </ResponsiveContainer>
         </BodyContainer>
+        </>
     )
 }
 

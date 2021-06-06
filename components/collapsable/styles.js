@@ -34,6 +34,7 @@ export const Container = styled.div`
 export const Sub = styled.div`
     display: grid;
     grid-template-rows: auto 450px;
+    grid-gap: 15px;
 
     @media only screen and (max-width: 1200px){
         grid-template-rows: auto 200px;
@@ -63,10 +64,12 @@ export const List = styled.div`
 
         li{
             padding: 5px 0px;
+            font-size: 14px !important;
         }
 
         a {
             padding: 5px 0px; 
+            font-size: 12px !important;
         }
     }
     

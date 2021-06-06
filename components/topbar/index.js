@@ -18,12 +18,6 @@ const TopBar = () => {
             <Logo>
                 <Link href="/home"><Title/></Link>
             </Logo>
-            <Sub>
-                <Link href="/home"><LogoIcon/></Link>
-                <Contact>
-                    <p>For more info contact us on <a href="https://www.instagram.com/thesinnersprodigy/" target="_blank">instagram <AiFillInstagram/></a></p>
-                </Contact>
-            </Sub>
         </Container>
     )
 }

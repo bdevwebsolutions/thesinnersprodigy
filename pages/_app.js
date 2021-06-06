@@ -9,8 +9,6 @@ import NProgress from 'nprogress';
 import Router from 'next/router';
 import 'nprogress/nprogress.css';
 
-//MARQUUE
-import {Marq} from '../components/marque';
 import BottomBar from '../components/bottom';
 
 NProgress.configure({
@@ -29,7 +27,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <CartProvider>
       <ItemsProvider>
-        <Marq/>
         <Component {...pageProps} />
         <BottomBar/>
       </ItemsProvider>

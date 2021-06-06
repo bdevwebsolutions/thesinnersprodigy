@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import HomeContent from '../components/home';
+import {Marq} from '../components/marque';
 
 //hoc
 import {WithData} from '../components/hoc/withData';
@@ -15,6 +16,8 @@ import {WithData} from '../components/hoc/withData';
 const Home = () => {
 
     return (
+        <>
+        <Marq/>
         <BodyContainer>
             <ResponsiveContainerFixed>
                 <TopBar/>
@@ -72,6 +75,7 @@ If you are shipping an item, you should consider using a trackable shipping serv
                 
             </ResponsiveContainer>
         </BodyContainer>
+        </>
     )
 }
 

@@ -4,7 +4,7 @@ import {theme} from '../../styles/theme';
 export const Container = styled.div`
     margin-top: 60px !important;
     display: grid;
-    grid-template-rows: 1fr 100px;
+    grid-template-rows: 1fr;
 
     line-height: 120px;
     
@@ -46,34 +46,3 @@ export const Logo = styled.div`
 
 `
 
-export const Contact = styled.div`
-    text-align: right;
-    font-size: 12px;
-
-    a{
-        font-weight: bold;
-    }
-
-    @media only screen and (max-width: 526px){
-        text-align: center;
-    }
-`
-
-export const Sub = styled.div`
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    text-align: left;
-
-    svg{
-        height: 30px;
-        cursor: pointer;
-        margin-top: 25px !important;
-
-    }
-
-    @media only screen and (max-width: 526px){
-        display: none;
-
-    }
-    
-`

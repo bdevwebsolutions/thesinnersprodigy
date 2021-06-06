@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 import {theme} from '../../styles/theme';
 
-export const Container = styled.div`
-    
-    *{
-        display: inline-block;
+export const Placer = styled.div`
+    display: grid !important;
+    width: 100%;
+    grid-template-columns: auto 1fr;
+
+    p{
+        display: inline-block !important;
+        width: 100%;
+        text-align: right !important;
+        font-size: 12px;
+        line-height: 28px;
     }
 
-    overflow: hidden;
-    padding: 15px 0px !important;
-
+    
     ul{
-        display: flex;
+        display: inline-flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        max-width: 350px;
-        width: 100%;
+        width: auto;
         margin-bottom: 15px;
 
         li{
@@ -24,6 +28,11 @@ export const Container = styled.div`
             text-transform: uppercase;
             cursor: pointer;
             margin-right: 5px !important;
+            padding: 4px 10px;
+        }
+
+        li:first-of-type{
+            padding: 4px 10px 4px 0px;
         }
 
         a{
@@ -31,14 +40,20 @@ export const Container = styled.div`
             text-transform: uppercase;
             cursor: pointer;
             margin-right: 5px !important;
+            padding: 4px 10px;
         }
 
         a:last-of-type{
             font-weight: bold;
-            padding: 0px 5px;
             background-color: black;
             color: white;
-            border-radius: 5px;
+            border-radius: 2px;
+            transition-duration: 0.2s;
+
+            :hover{
+                background-color: white;
+                color: black;
+            }
         }
 
         li:hover{
@@ -49,6 +64,18 @@ export const Container = styled.div`
             font-weight: bold;
         }
     }
+`
+
+export const Container = styled.div`
+    
+    *{
+        display: inline-block;
+    }
+
+    overflow: hidden;
+    padding: 15px 0px !important;
+
+
 
     @media only screen and (max-width: 720px){
         ul{

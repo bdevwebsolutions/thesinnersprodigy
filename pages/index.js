@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(async() => {
     let res = await fetchInitialData();
     if(res){
-      router.push('/home');
+      router.push('/home')
     }
   }, [])
 
@@ -31,7 +31,7 @@ export default function Home() {
         <title>THE SINNERS PRODIGY</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {loading ? <Loader clear={setLoading}/> : ""}
+      {loading ? <Loader clear={setLoading}/> : <Lander/>}
     </Container>
   )
 }
