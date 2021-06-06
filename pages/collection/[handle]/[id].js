@@ -1,4 +1,3 @@
-import {useRouter} from 'next/router';
 import styled from 'styled-components';
 import TopBar from '../../../components/topbar';
 import Nav from '../../../components/nav';
@@ -11,7 +10,7 @@ import {WithData} from '../../../components/hoc/withData';
 
 
 const Items = (props) => {
-
+    
     return (
         <>
         <Marq/>

@@ -11,7 +11,7 @@ const Product = ({product}) => {
     const [title, setTitle] = React.useState(product.variants[0].title)
     const [added, setAdded] = React.useState(false);
     const [images, setImages] = React.useState([])
-    console.log(product);
+    
 
     //CARTCONTEXT
     const {cart, setCart} = React.useContext(CartContext);

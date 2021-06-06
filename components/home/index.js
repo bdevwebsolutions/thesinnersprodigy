@@ -53,7 +53,7 @@ const Higlights = ({image}) => {
 
     React.useEffect(() => {
         if(urls.length <= 0 ){
-            console.log(image)
+            
             image.map(el => {
                 setUrls(prevState => [...prevState, el.images[0].src])
             })

@@ -3,6 +3,7 @@ import 'react-slideshow-image/dist/styles.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import ItemsProvider from '../context/itemsContext';
 import CartProvider from '../context/cartContext';
+import Head from 'next/head';
 
 //COMPONENTS
 import NProgress from 'nprogress';
@@ -25,12 +26,17 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
   return (
-    <CartProvider>
-      <ItemsProvider>
-        <Component {...pageProps} />
-        <BottomBar/>
-      </ItemsProvider>
-    </CartProvider>
+    <>
+      <Head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+      </Head>
+      <CartProvider>
+        <ItemsProvider>
+          <Component {...pageProps} />
+          <BottomBar/>
+        </ItemsProvider>
+      </CartProvider>
+    </>
   )
 }
 

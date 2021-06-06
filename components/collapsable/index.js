@@ -42,7 +42,6 @@ const Collapsable = ({visible, setVisible}) => {
             let res = {men: [], woman: [], accessories: [], new: []};
 
             d.map(el => {
-                console.log(el.title)
                 if(el.handle === "nav"){
                     null
                 } else if (el.title.includes('Men')){
@@ -70,7 +69,7 @@ const Collapsable = ({visible, setVisible}) => {
                             {collections.new.map(el => {
                                 return <Link 
                                             key={el.handle} 
-                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                            href={`/collection/${encodeURIComponent(el.title)}/${encodeURIComponent(el.id)}`}>
                                                 <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
                                         </Link>
                             })}

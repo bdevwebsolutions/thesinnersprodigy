@@ -5,7 +5,6 @@ import Link from 'next/link';
 import {Item, Container, Grid, Title} from './styles';
 
 export const Collection = ({items, title}) => {
-
     return (
     <Container>
         <Title>{title}</Title>
