@@ -10,6 +10,17 @@ const CartProvider = ({children}) => {
 
     const [cart, setCart] = React.useState([]);
 
+    //Useffect to get from localstorage
+    React.useEffect(() => {
+        let local = JSON.parse(localStorage.getItem('tsp-cart'));
+       
+        if(local === null || local.length === 0){
+            setCart([])
+        } else {
+            setCart(local);
+        }
+    }, [])
+
     const handleCheckout = async () => {
         let checkout = await client.checkout.create().then(chk => {
             return chk;

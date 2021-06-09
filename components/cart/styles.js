@@ -23,7 +23,7 @@ export const Container = styled.div`
     grid-template-rows: 80px 1fr 60px 30px;
 
     @media only screen and (max-width: 400px){
-        width: 100%;
+        width: 100vw;
     }
 
 `
@@ -32,7 +32,7 @@ export const List = styled.div`
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, 80px);
+    grid-template-rows: repeat(auto-fill, 150px);
     overflow: scroll;
     overflow-x: hidden;
 
@@ -42,17 +42,50 @@ export const Item = styled.div`
     width: 100%;
     display: grid !important;
     padding: 15px !important;
-    grid-template-columns: auto 1fr 20px;
-    border-bottom: solid 1px black;
-    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 35px;
+    grid-gap: 0px;
+     p{
+         text-align: left !important;
+     }
 
     button{
-        color: black;
+        height: 35px;
+        width: 35px;
+        color: white;
         border: none;
-        background-color: none;
+        background-color: black;
         :hover{
             font-weight: bold;
             cursor: pointer;
+        }
+    }
+
+    div{
+        position: relative;
+    }
+
+    @media only screen and (max-width: 720px){
+        grid-template-columns: 1fr 1fr 35px !important;
+        grid-gap: 0px;
+        p{
+            text-align: left !important;
+            display: block !important;
+        }
+
+        button{
+            height: 35px;
+            width: 35px;
+            color: white;
+            border: none;
+            background-color: black;
+            :hover{
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+
+        div{
+            position: relative;
         }
     }
 `
@@ -65,6 +98,7 @@ export const Checkout = styled.div`
     line-height: 30px;
     font-weight: bold;
     cursor: pointer;
+    font-size: 14px;
     
 `
 

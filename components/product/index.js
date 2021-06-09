@@ -6,10 +6,13 @@ import {BiLeftArrow, BiRightArrow} from 'react-icons/bi';
 
 const Product = ({product}) => {
 
+    console.log(product);
+
     const [variant, setVariant] = React.useState(product.variants[0].id)
     const [price, setPrice] = React.useState(product.variants[0].price)
     const [title, setTitle] = React.useState(product.variants[0].title)
     const [added, setAdded] = React.useState(false);
+    const [thumbnail, setThumbnail] = React.useState(product.images[0].src);;
     const [images, setImages] = React.useState([])
     
 
@@ -22,7 +25,7 @@ const Product = ({product}) => {
     }
 
     const addToCart = () => {
-        let p = [variant, price, product.title]
+        let p = [variant, price, product.title, thumbnail]
         setCart([...cart, p]);
         setAdded(true);
         setTimeout(function(){ setAdded(false)}, 1000);
@@ -49,7 +52,9 @@ const Product = ({product}) => {
                 <MainInfo>
                     <h3>{product.title}</h3>
                     <sub>{product.productType ? product.productType : ""}</sub>
-                    <p>{product.description ? product.description : ""}</p>
+                    <p>
+                        {product.descriptionHtml.length > 0 ? <div dangerouslySetInnerHTML={ {__html: product.descriptionHtml} }/> : product.description}
+                    </p>
                 </MainInfo>
                 {product.variants.length > 1 ? 
                     <CheckoutForm>

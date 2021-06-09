@@ -16,13 +16,25 @@ export const Container = styled.div`
     @media only screen and (max-width: 1200px){
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        height: ${props => props.trigger ? "800px" : "0px"};
+        height: ${props => props.trigger ? "auto" : "0px"};
     }
 
-    @media only screen and (max-width: 750px){
+    //MOBILE
+    @media only screen and (max-width: 720px){
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        height: ${props => props.trigger ? "1400px" : "0px"};
+        grid-template-rows: 40px 1fr 1fr 1fr 1fr ;
+        height: ${props => props.trigger ? "100vh" : "0px"};
+        visibility: ${props => props.trigger ? "visible" : "hidden"};
+        top: 0px;
+        width: 100vw;
+        left: 0;
+        transition-duration: 0s !important;
+        position: fixed;
+        z-index: 10;
+        border: none;
+        background-color: white;
+        padding: 30px !important;
+        overflow: scroll;
     }
 
     border-bottom: solid 1px lightgrey;
@@ -35,12 +47,12 @@ export const Sub = styled.div`
     grid-gap: 15px;
 
     @media only screen and (max-width: 1200px){
-        grid-template-rows: auto 200px;
+        grid-template-rows: auto 400px;
     }
 
 
-    @media only screen and (max-width: 1200px){
-        grid-template-rows: auto 160px;
+    @media only screen and (max-width: 720px){
+        grid-template-rows: auto;
     }
 
 `
@@ -54,6 +66,7 @@ export const List = styled.div`
         display: block;
         color: gray;
         text-decoration: underline;
+        margin-bottom: 10px;
         
     }
 
@@ -67,12 +80,22 @@ export const List = styled.div`
             padding: 5px 0px;
             font-size: 14px !important;
             cursor: pointer;
+            :hover{
+                text-decoration: underline;
+            }
         }
 
         a {
             padding: 5px 0px; 
             font-size: 12px !important;
             cursor: pointer;
+
+        }
+    }
+
+    @media only screen and (max-width: 720px){
+        ul{
+            display: grid !important;
         }
     }
     
@@ -84,11 +107,29 @@ export const Preview = styled.div`
     height: auto;
 
     @media only screen and (max-width: 1200px){
+        height: 400px;
+    }
+
+    @media only screen and (max-width: 720px){
         height: 200px;
     }
 
-    @media only screen and (max-width: 1200px){
-        height: 160px;
+`
+
+export const MobileButton = styled.button`
+    display: none;
+
+
+    @media only screen and (max-width: 720px){
+        display: block;
+        border: none;
+        cursor: pointer;
+        text-align: right;
+        padding: 10px !important;
+        font-weight: bold;
+        :active{
+            font-weight: bold;
+        }
     }
 
 `

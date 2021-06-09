@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 
 //Components
-import {Container, Sub, List, Preview} from './styles';
+import {Container, Sub, List, Preview, MobileButton} from './styles';
 
 
 //DATA FETCHING
@@ -20,15 +20,24 @@ const Collapsable = ({visible, setVisible}) => {
         //IMAGES
         const [URLS, setURLS] = useState([]);
 
+        //Mobile button
+        const [showMobileButton, setShowMobileButton] = useState(false);
+
         //CONTEXT
         const {initialData} = React.useContext(ItemsContext);
 
         useEffect(async () => {
+            //Images
             let d = initialData[0];
             let urls = d.map(el => {
                 return el.images[0].src;
             })
             setURLS(urls)
+
+            //mobilebutton
+            if(document.documentElement.clientWidth <= 720){
+                setShowMobileButton(true)
+            }
         }, [])
         //--------------
 
@@ -62,6 +71,7 @@ const Collapsable = ({visible, setVisible}) => {
 
         return (
             <Container trigger={visible}>
+                {showMobileButton ? <MobileButton onClick={() => {setVisible(false)}}>CLOSE</MobileButton> : null}
                 <Sub>
                     <List>
                         <p>NEW ARRIVALS</p>
@@ -76,7 +86,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 0 ? <Image src={URLS[0]} layout="fill" objectFit="cover"/> : "LOADING..."}
+                        {URLS.length > 0 ? <Image src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -93,7 +103,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 0 ? <Image src={URLS[1]} layout="fill" objectFit="cover"/> : "LOADING..."}
+                        {URLS.length > 1 ? <Image src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -110,7 +120,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 0 ? <Image src={URLS[2]} layout="fill" objectFit="cover"/> : "LOADING..."}
+                        {URLS.length > 2 ? <Image src={URLS[2] !== undefined ? URLS[2] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -127,7 +137,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 0 ? <Image src={URLS[3]} layout="fill" objectFit="cover"/> : "LOADING..."}
+                        {URLS.length > 3 ? <Image src={URLS[3] !== undefined ? URLS[3] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
             </Container>

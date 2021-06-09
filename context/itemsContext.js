@@ -1,5 +1,5 @@
 import React from 'react'
-import { testCOMMUNITY, getCollectionsByID, testHIGHLIGHT, testNAV, getCollections } from '../lib/shopify';
+import { testCOMMUNITY, COMMUNITY, getCollectionsByID, testHIGHLIGHT, HIGHLIGHT, testNAV, NAV, getCollections } from '../lib/shopify';
 
 
 export const ItemsContext = React.createContext(null);
@@ -12,17 +12,17 @@ const ItemsProvider = ({children}) => {
 
 
     const fetchInitialData = async () => {
-        let nav = await getCollectionsByID(testNAV);
-        let community = await getCollectionsByID(testCOMMUNITY);
-        let highlight = await getCollectionsByID(testHIGHLIGHT);
+        let nav = await getCollectionsByID(NAV);
+        let community = await getCollectionsByID(COMMUNITY);
+        let highlight = await getCollectionsByID(HIGHLIGHT);
         setInitialData([nav, community, highlight]);
         return true;
     }
 
     React.useEffect(async () => {
-        let nav = await getCollectionsByID(testNAV);
-        let community = await getCollectionsByID(testCOMMUNITY);
-        let highlight = await getCollectionsByID(testHIGHLIGHT);
+        let nav = await getCollectionsByID(NAV);
+        let community = await getCollectionsByID(COMMUNITY);
+        let highlight = await getCollectionsByID(HIGHLIGHT);
         setInitialData([nav, community, highlight]);
     },[])
 

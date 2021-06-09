@@ -54,6 +54,9 @@ export const MainInfo = styled.div`
     p{
         display: block;
         height: auto;
+        *{
+            font-family: 'Noto Sans', sans-serif !important;
+        }
     }
 `
 
