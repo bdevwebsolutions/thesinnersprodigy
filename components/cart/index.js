@@ -81,7 +81,7 @@ const Cart = ({visible, setVisible}) => {
             <Container>
                 <Titel>
                     <h3>Cart</h3>
-                    <p onClick={() => {setVisible(!visible)}}>close</p>
+                    <p onClick={() => {setVisible(!visible)}}>CLOSE</p>
                 </Titel>
                 <List>
                 {list}

@@ -26,6 +26,7 @@ export const Container = styled.div`
         width: 100vw;
     }
 
+
 `
 
 export const List = styled.div`
@@ -109,5 +110,17 @@ export const Titel = styled.div`
     margin-bottom: 15px;
     p{
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 720px){
+        p:first-of-type{
+                display: block !important;
+                text-align: right!important;
+                background-color: lightgrey;
+                padding-right: 10px;
+                font-weight: normal;
+                margin-top: 5px;
+                font-weight: bold;
+        }
     }
 `
