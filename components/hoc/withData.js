@@ -7,14 +7,18 @@ export const WithData = WrappedComponent => props => {
 
     const {initialData} = React.useContext(ItemsContext);
     const router = useRouter();
+    const [show, setShow] = React.useState(false)
 
     React.useEffect(() => {
-        if(initialData === null){
+        let d = window.localStorage.getItem('tsp-data');
+        if(JSON.parse(d).length < 0){
             router.push('/')
+        } else {
+            setShow(true);
         }
     }, [])
 
-    if(initialData === null){
+    if(!show){
         return null;
     } else {
         return <WrappedComponent {...props}/>

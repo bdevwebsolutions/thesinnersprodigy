@@ -13,7 +13,7 @@ import { getCollections } from '../lib/shopify';
 export default function Home() {
 
   const [loading, setLoading] = useState(true);
-  const {fetchInitialData} = useContext(ItemsContext);
+  const {fetchInitialData, initalData} = useContext(ItemsContext);
   const router = useRouter();
 
 
