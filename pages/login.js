@@ -20,7 +20,7 @@ const Login = () => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                <p>* Our auth system will be coming soon.</p>
+                <p>Our auth system will be coming soon.</p>
             </ResponsiveContainer>
         </BodyContainer>
         </>
@@ -49,6 +49,9 @@ const ResponsiveContainer = styled.div`
     max-width: 1440px;
     width: 95%;
     margin: 0px auto;
+
+    display: grid;
+    place-items: center;
 
 `
 

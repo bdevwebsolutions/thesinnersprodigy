@@ -90,18 +90,18 @@ export const Content = styled.div`
         max-width: 100%;
         padding: 20px;
         svg:first-of-type{
-            max-width: 100%;
-            width: 80px;
+            max-width: 30%;
+            width: 40px;
         }
 
         svg:nth-of-type(2){
-            max-width: 100%;
-            width: 400px;
+            max-width: 95%;
+            width: 300px;
         }
 
         svg:nth-of-type(3){
-            max-width: 100%;
-            width: 300px;
+            max-width: 80%;
+            width: 200px;
         }
     }
 `
