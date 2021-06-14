@@ -89,8 +89,8 @@ const Cart = ({visible, setVisible}) => {
                 <Total>
                     TOTAL: <b>€{total}</b>
                 </Total>
-                <Checkout onClick={handleCheckout}>
-                    PROCEED TO CHEKOUT
+                <Checkout onClick={() => { cart.length > 0 ? handleCheckout : null}}>
+                { cart.length <= 0 ? "NO ITEMS IN CART" : "CHECKOUT"}
                 </Checkout>
             </Container>
         )

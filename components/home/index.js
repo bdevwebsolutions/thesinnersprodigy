@@ -13,8 +13,8 @@ const SlideShow = ({image}) => {
     const [urls, setUrls] = React.useState([])
     React.useEffect(() => {
         if(urls.length <= 0 ){
-            image.map(el => {
-                setUrls(prevState => [...prevState, el.images[0].src])
+            image.images.map(el => {
+                setUrls(prevState => [...prevState, el.src])
             })
         }
     }, [])
@@ -24,9 +24,9 @@ const SlideShow = ({image}) => {
 
     return(
         <SlideContainer>
-            <Carousel showThumbs={false} showStatus={false}>
+            <Carousel emulateTouch={true} showThumbs={false} showStatus={false}>
                 {urls ? urls.map((el, index) => {
-                    return <Slide><p>{image[index].title}</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
+                    return <Slide><p>BUY NOW</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
                 }): null}
             </Carousel>
         </SlideContainer>
@@ -46,7 +46,7 @@ const About = () => {
     )
 }
 
-//Higlihhted pictures
+//Higlihhted pictures - COMMUNITY
 const Higlights = ({image}) => {
 
     const [urls, setUrls] = React.useState([])
@@ -54,8 +54,8 @@ const Higlights = ({image}) => {
     React.useEffect(() => {
         if(urls.length <= 0 ){
             
-            image.map(el => {
-                setUrls(prevState => [...prevState, el.images[0].src])
+            image.images.map(el => {
+                setUrls(prevState => [...prevState, el.src])
             })
         }
     }, [])

@@ -72,12 +72,12 @@ export const AboutContainer = styled.div`
 //-----------------------------
 
 
-//HIGHLIGHT
+//HIGHLIGHT - EIGENLIJK COMMUNITY
 export const HighlightContainer = styled.div`
 
     display: grid !important;
-    grid-template-columns: ${props => `repeat(${props.amount}, 1fr)`};
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: ${props => `repeat(${Math.ceil(props.amount / 3)}, 1fr)`};;
     grid-gap: 15px;
     margin-bottom: 100px !important;
 

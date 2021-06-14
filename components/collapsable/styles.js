@@ -53,6 +53,8 @@ export const Sub = styled.div`
 
     @media only screen and (max-width: 720px){
         grid-template-rows: auto;
+        border-bottom: solid 1px lightgrey !important;
+        padding-bottom: 15px !important;
     }
 
 `
@@ -95,8 +97,17 @@ export const List = styled.div`
 
     @media only screen and (max-width: 720px){
         ul{
-            display: grid !important;
+            display: flex !important;
+
+            li{
+                font-size: 14px !important;
+                display: block !important;
+                width: 100%;
+            }
+
         }
+
+
     }
     
 `

@@ -6,8 +6,6 @@ import {BiLeftArrow, BiRightArrow} from 'react-icons/bi';
 
 const Product = ({product}) => {
 
-    console.log(product);
-
     const [variant, setVariant] = React.useState(product.variants[0].id)
     const [price, setPrice] = React.useState(product.variants[0].price)
     const [title, setTitle] = React.useState(product.variants[0].title)

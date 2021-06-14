@@ -10,7 +10,12 @@ import {Marq} from '../components/marque';
 //hoc
 import {WithData} from '../components/hoc/withData';
 
+//context
+import {ItemsContext} from '../context/itemsContext';
+
 const Media = () => {
+
+    const {initialData} = React.useContext(ItemsContext);
 
     return (
         <>
@@ -21,7 +26,7 @@ const Media = () => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                <MediaContent/>
+            {initialData !== null ? <MediaContent media={initialData[3]}/> : "loading..."}
             </ResponsiveContainer>
         </BodyContainer>
         </>

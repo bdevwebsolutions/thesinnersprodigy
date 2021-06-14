@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import 'react-slideshow-image/dist/styles.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import '../components/media/media.css';
 import ItemsProvider from '../context/itemsContext';
 import CartProvider from '../context/cartContext';
 import Head from 'next/head';

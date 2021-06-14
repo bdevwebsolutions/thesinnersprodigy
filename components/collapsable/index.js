@@ -26,11 +26,11 @@ const Collapsable = ({visible, setVisible}) => {
         //CONTEXT
         const {initialData} = React.useContext(ItemsContext);
 
-        useEffect(async () => {
+        useEffect(() => {
             //Images
             let d = initialData[0];
-            let urls = d.map(el => {
-                return el.images[0].src;
+            let urls = d.images.map((el) => {
+                return el.src;
             })
             setURLS(urls)
 
@@ -108,7 +108,7 @@ const Collapsable = ({visible, setVisible}) => {
                 </Sub>
                 <Sub>
                     <List>
-                        <p>WOMAN</p>
+                        <p>WOMEN</p>
                         <ul>
                             {collections.woman.map(el => {
                                 return <Link 

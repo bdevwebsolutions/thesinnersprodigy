@@ -28,7 +28,7 @@ export const Content = styled.div`
     grid-gap: 15px;
 
     svg:first-of-type{
-        max-width: 10%;
+        max-width: 5%;
         margin: 0px auto;
         opacity: 0;
         animation-duration: 2s; /* the duration of the animation */
@@ -39,7 +39,7 @@ export const Content = styled.div`
     }
 
     svg:nth-of-type(2){
-        max-width: 80%;
+        max-width: 50%;
         margin: 0px auto;
         opacity: 0;
         animation-duration: 2s; /* the duration of the animation */
@@ -49,7 +49,7 @@ export const Content = styled.div`
     }
 
     svg:nth-of-type(3){
-        max-width: 40%;
+        max-width: 30%;
         margin: 0px auto;
         opacity: 0;
         animation-duration: 2s; /* the duration of the animation */
