@@ -12,6 +12,7 @@ const Product = ({product}) => {
     const [added, setAdded] = React.useState(false);
     const [thumbnail, setThumbnail] = React.useState(product.images[0].src);;
     const [images, setImages] = React.useState([])
+    const [available, setAvailable] = React.useState(true)
     
 
     //CARTCONTEXT
@@ -19,7 +20,7 @@ const Product = ({product}) => {
 
     const selectVariant = (e) => {
         setVariant(e.target.value);
-        product.variants.map(el => {if(el.id === e.target.value){ setPrice(el.price); setTitle(el.title)} else {null}});
+        product.variants.map(el => {if(el.id === e.target.value){ setAvailable(el.available); setPrice(el.price); setTitle(el.title)} else {null}});
     }
 
     const addToCart = () => {
@@ -34,6 +35,7 @@ const Product = ({product}) => {
         if(images.length <= 0){
             product.images.map(el => {setImages(prevImages => [...prevImages, {original: el.src, thumbnail: el.src}])})
         }
+        setAvailable(product.variants[0].available)
     }, [])
 
     return (
@@ -64,7 +66,7 @@ const Product = ({product}) => {
                         </select>
                     </CheckoutForm> 
                 : null}
-                <button onClick={addToCart}>ADD TO CART</button>
+                <button onClick={() => {available ? addToCart() : null}}>{available ? "ADD TO CART" : "OUT OF STOCK"}</button>
                 {added ? <Warn>PRODUCT ADDED TO CART</Warn> : null}
             </Info>
         </Container>
