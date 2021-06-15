@@ -19,10 +19,12 @@ export const Item = styled.div`
     }
     border-bottom: solid 1px lightgray;
 
-    opacity: 0.9;
+    opacity: 1;
     transition-duration: 0.2s;
     :hover{
-        opacity: 1;
+        p{
+            font-weight: bold;
+        }
     }
 
 

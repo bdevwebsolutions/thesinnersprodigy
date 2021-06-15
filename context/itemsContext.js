@@ -1,5 +1,5 @@
 import React from 'react'
-import { COMMUNITY_PRODUCT, getProductByID, NAV_PRODUCT, HIGHLIGHT_PRODUCT, getCollections, getCollectionsByID, MEDIA_PRODUCT } from '../lib/shopify';
+import { COMMUNITY_PRODUCT, getProductByID, NAV_PRODUCT, HIGHLIGHT_PRODUCT, MEDIA_PRODUCT } from '../lib/shopify';
 
 
 export const ItemsContext = React.createContext(null);

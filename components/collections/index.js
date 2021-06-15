@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import Image from 'next/image';
 import Link from 'next/link';
 import {Item, Container, Grid, Title} from './styles';

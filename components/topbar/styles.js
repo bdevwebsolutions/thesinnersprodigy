@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {theme} from '../../styles/theme';
 
 export const Container = styled.div`
     margin-top: 30px !important;
@@ -28,7 +27,7 @@ export const Logo = styled.div`
     text-align: center;
 
     svg{
-        height: 100px;
+        height: 80px;
         margin: 0px auto;
         cursor: pointer;
 
@@ -36,7 +35,7 @@ export const Logo = styled.div`
 
     @media only screen and (max-width: 526px){
         svg{
-            height: 60px;
+            height: 40px;
             margin: 0px auto;
             margin-top: 0px;
             display: block;

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
 
-import {Container, Logo, Contact, Sub} from './styles';
+import {Container, Logo} from './styles';
 import Title from '../../media/svg/title.svg';
 //TOPBAR
 /*

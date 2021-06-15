@@ -2,7 +2,6 @@ import React from 'react'
 import {Container, Info, View, MainInfo, CheckoutForm, Price, Warn} from './styles';
 import {CartContext} from '../../context/cartContext';
 import ImageGallery from 'react-image-gallery';
-import {BiLeftArrow, BiRightArrow} from 'react-icons/bi';
 
 const Product = ({product}) => {
 
