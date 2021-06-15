@@ -33,7 +33,7 @@ const Nav = () => {
                     <Link href="/brand">brand</Link>
                     <Link href="/login">login</Link>
                     <Link href="/prestige">prestige</Link>
-                    <li onClick={() => {setToggleCart(!toggleCart)}}><AiOutlineShoppingCart/>{amount > 0 ? amount : ""}</li>
+                    <li onClick={() => {setToggleCart(!toggleCart)}}><AiOutlineShoppingCart/>{amount > 0 ? amount : "0"}</li>
                 </ul>
                 {/*Collapsable container */}
                 <Cart visible={toggleCart} setVisible={setToggleCart}/>
