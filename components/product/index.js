@@ -54,6 +54,7 @@ const Product = ({product}) => {
                         {product.descriptionHtml.length > 0 ? <div dangerouslySetInnerHTML={ {__html: product.descriptionHtml} }/> : product.description}
                     </p>
                 </MainInfo>
+                <Price>€{price}</Price>
                 {product.variants.length > 1 ? 
                     <CheckoutForm>
                         <select onChange={e => {selectVariant(e)}}>
@@ -63,7 +64,6 @@ const Product = ({product}) => {
                         </select>
                     </CheckoutForm> 
                 : null}
-                <Price>€{price}</Price>
                 <button onClick={addToCart}>ADD TO CART</button>
                 {added ? <Warn>PRODUCT ADDED TO CART</Warn> : null}
             </Info>

@@ -1,6 +1,7 @@
 import React from 'react'
 import {CartContext} from '../../context/cartContext';
 import Image from 'next/image';
+import {AiOutlineClose} from 'react-icons/ai'
 
 //Compinents
 import {Container, Item, Checkout, Total, Titel, List} from './styles';
@@ -80,8 +81,7 @@ const Cart = ({visible, setVisible}) => {
         return (
             <Container>
                 <Titel>
-                    <h3>Cart</h3>
-                    <p onClick={() => {setVisible(!visible)}}>CLOSE</p>
+                    <p onClick={() => {setVisible(!visible)}}><AiOutlineClose/></p>
                 </Titel>
                 <List>
                 {list}
@@ -89,7 +89,7 @@ const Cart = ({visible, setVisible}) => {
                 <Total>
                     TOTAL: <b>€{total}</b>
                 </Total>
-                <Checkout onClick={() => { cart.length > 0 ? handleCheckout : null}}>
+                <Checkout onClick={() => { cart.length > 0 ? handleCheckout() : null}}>
                 { cart.length <= 0 ? "NO ITEMS IN CART" : "CHECKOUT"}
                 </Checkout>
             </Container>

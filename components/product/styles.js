@@ -16,7 +16,9 @@ export const Container = styled.div`
 export const View = styled.div`
     padding: 15px !important;
     @media only screen and (max-width: 900px){
-        grid-row: 2/3;
+        grid-row: 1/2;
+        max-width: 90vw;
+        margin: 0px auto !important;
     }
 `
 
@@ -34,6 +36,16 @@ export const Info = styled.div`
         :hover{
             border: solid 1px grey;
         }
+    }
+
+    @media only screen and (max-width: 720px){
+        button{
+            max-width: 80vw;
+            margin: 15px auto;
+
+        }
+        max-width: 80vw;
+        margin: 0px auto !important;
     }
 
 `
@@ -56,7 +68,22 @@ export const MainInfo = styled.div`
         height: auto;
         *{
             font-family: 'Noto Sans', sans-serif !important;
+            font-size: 14px;
         }
+    }
+
+    span{
+        display: block;
+        height: auto;
+        *{
+            font-family: 'Noto Sans', sans-serif !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            line-height: auto;
+        }
+        font-size: 14px;
+        padding: 0px !important;
+        margin: 0px !important;
     }
 `
 
@@ -79,12 +106,19 @@ export const CheckoutForm = styled.div`
         background-color: white;
         color: black;
     }
+
+    @media only screen and (max-width: 720px){
+        select{
+            max-width: 80vw;
+            margin: 15px auto;
+        }
+    }
 `
 
 export const Price = styled.p`
     font-size: 18px;
     display: block;
-    margin-bottom: 15px !important;
+    margin-bottom: 35px !important;
 `
 
 export const Warn = styled.p`

@@ -35,6 +35,25 @@ export const Placer = styled.div`
             padding: 4px 10px 4px 0px;
         }
 
+        li:last-of-type{
+            position: fixed;
+            top: 40px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            max-width: 60px;
+            max-height: 60px;
+            padding: 15px;
+            border-radius: 80px;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 30px;
+            box-shadow: 1px 1px 5px lightgrey;
+            z-index: 98;
+        }
+
         a{
             font-size: 13px;
             text-transform: uppercase;
@@ -104,7 +123,5 @@ export const Container = styled.div`
     padding: 15px 0px !important;
 
 
-
-
-
 `
+

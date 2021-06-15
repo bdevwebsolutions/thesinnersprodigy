@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
 import {Container, Placer} from './styles';
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 
 //Components
 import Collapsable from '../collapsable';
@@ -32,7 +33,7 @@ const Nav = () => {
                     <Link href="/brand">brand</Link>
                     <Link href="/login">login</Link>
                     <Link href="/prestige">prestige</Link>
-                    <li onClick={() => {setToggleCart(!toggleCart)}}>cart <b>{amount > 0 ? amount : ""}</b></li>
+                    <li onClick={() => {setToggleCart(!toggleCart)}}><AiOutlineShoppingCart/>{amount > 0 ? amount : ""}</li>
                 </ul>
                 {/*Collapsable container */}
                 <Cart visible={toggleCart} setVisible={setToggleCart}/>

@@ -1,11 +1,9 @@
 import { useRouter } from 'next/router';
 import React from 'react'
-import { ItemsContext } from '../../context/itemsContext'
 
 
 export const WithData = WrappedComponent => props => {
 
-    const {initialData} = React.useContext(ItemsContext);
     const router = useRouter();
     const [show, setShow] = React.useState(false)
 

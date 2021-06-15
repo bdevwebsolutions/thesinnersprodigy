@@ -6,10 +6,11 @@ export const Container = styled.div`
     position: fixed !important;
     width: 400px;
     height: 100vh;
+    max-height: 100vh;
     border-left: solid 1px lightgray;
     right: 0;
     top: 0;
-    z-index: 10;
+    z-index: 99;
     background-color: ${theme.white};
     padding: 15px !important;
     transition-duration: 0.2s;
@@ -19,8 +20,10 @@ export const Container = styled.div`
         
     }
 
+
+
     display: grid !important;
-    grid-template-rows: 80px 1fr 60px 30px;
+    grid-template-rows: 40px 1fr 60px 30px;
 
     @media only screen and (max-width: 400px){
         width: 100vw;
@@ -110,13 +113,16 @@ export const Titel = styled.div`
     margin-bottom: 15px;
     p{
         cursor: pointer;
+        font-size: 20px;
+        :hover{
+            font-weight: bold;
+        }
     }
 
     @media only screen and (max-width: 720px){
         p:first-of-type{
                 display: block !important;
                 text-align: right!important;
-                background-color: lightgrey;
                 padding-right: 10px;
                 font-weight: normal;
                 margin-top: 5px;
