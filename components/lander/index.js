@@ -1,8 +1,6 @@
 import React from 'react';
-import Cta from '../../media/svg/cta.svg';
-import Chaos from '../../media/svg/chaos.svg';
-import Logo from '../../media/svg/logo.svg';
 import {useRouter} from 'next/router';
+import Screen from '../../media/svg/total-loggerscreen.svg';
 
 //Styled Components
 import {Container, Content} from './styles';
@@ -15,9 +13,7 @@ const Lander = () => {
     return (
         <Container>
             <Content>
-                <Logo/>
-                <Cta/>
-                <Chaos/>
+                <Screen/>
                 <button onClick={() => {router.push('/home')}}>CONTINUE</button>
             </Content>
         </Container>

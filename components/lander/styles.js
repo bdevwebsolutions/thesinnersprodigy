@@ -24,11 +24,11 @@ export const Content = styled.div`
     z-index: 1;
     display: grid;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     grid-gap: 15px;
 
     svg:first-of-type{
-        max-width: 5%;
+        width: 60%;
         margin: 0px auto;
         opacity: 0;
         animation-duration: 2s; /* the duration of the animation */
@@ -36,26 +36,6 @@ export const Content = styled.div`
         animation-fill-mode: forwards;
         animation-name: fadeIn;
 
-    }
-
-    svg:nth-of-type(2){
-        max-width: 50%;
-        margin: 0px auto;
-        opacity: 0;
-        animation-duration: 2s; /* the duration of the animation */
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-name: fadeIn;
-    }
-
-    svg:nth-of-type(3){
-        max-width: 30%;
-        margin: 0px auto;
-        opacity: 0;
-        animation-duration: 2s; /* the duration of the animation */
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-        animation-name: fadeIn;
     }
 
     button{
@@ -90,8 +70,8 @@ export const Content = styled.div`
         max-width: 100%;
         padding: 20px;
         svg:first-of-type{
-            max-width: 30%;
-            width: 40px;
+            max-width: 90%;
+            width: 1000px;
         }
 
         svg:nth-of-type(2){

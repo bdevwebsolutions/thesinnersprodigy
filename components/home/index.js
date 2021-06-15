@@ -6,6 +6,7 @@ import {Container, SlideContainer, Slide, AboutContainer, HighlightContainer, Hi
 
 //Components
 import Logo from '../../media/svg/logo.svg'
+import { useRouter } from 'next/router';
 
 //SLIDESHOW
 const SlideShow = ({image}) => {
@@ -19,14 +20,19 @@ const SlideShow = ({image}) => {
         }
     }, [])
 
+    const router = useRouter()
+
     //<Image priority={true} src={urls[0]} layout="fill" objectFit="cover" ={30}/>
 
+    const handleBuyButton = () => {
+        router.push('/collection/New%20arrival%20Tracksuits/Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3MDMwNTU5MTQ1OQ%3D%3D')
+    }
 
     return(
         <SlideContainer>
             <Carousel emulateTouch={true} showThumbs={false} showStatus={false}>
                 {urls ? urls.map((el, index) => {
-                    return <Slide><p>BUY NOW</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
+                    return <Slide><p onClick={ urls.length > 0 ? handleBuyButton : null}>SHOP NOW</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
                 }): null}
             </Carousel>
         </SlideContainer>

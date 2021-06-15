@@ -11,6 +11,7 @@ export const SlideContainer = styled.div`
 `
 
 export const Slide = styled.div`
+
     position: relative;
     width: 100%;
     height: 640px;
@@ -31,7 +32,8 @@ export const Slide = styled.div`
         padding: 15px;
         background-color: black;
         opacity: 0.4;
-        cursor: default;
+        cursor: pointer;
+        
     }
 `
 //-------------

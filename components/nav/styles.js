@@ -36,22 +36,33 @@ export const Placer = styled.div`
         }
 
         li:last-of-type{
-            position: fixed;
-            top: 40px;
-            right: 20px;
+
             width: 60px;
             height: 60px;
             max-width: 60px;
             max-height: 60px;
             padding: 15px;
             border-radius: 80px;
-            background-color: black;
-            color: white;
+            color: black;
+            cursor: pointer;
             font-size: 18px;
             font-weight: normal;
             line-height: 30px;
-            box-shadow: 1px 1px 5px lightgrey;
             z-index: 98;
+
+            @media only screen and (min-width: 721px){
+                position: fixed;
+                top: 40px;
+                right: 40px;
+            }
+
+            @media only screen and (max-width: 720px){
+                position: fixed;
+                bottom: 40px;
+                right: 20px;
+                background-color: white;
+                box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+            }
         }
 
         a{
