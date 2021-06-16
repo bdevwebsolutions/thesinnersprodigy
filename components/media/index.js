@@ -5,7 +5,6 @@ import {ImageContainer} from './styles';
 
 const MediaContent = ({media}) => {
 
-    console.log(media)
 
     const breakpointColumnsObj = {
         default: 4,
@@ -24,14 +23,14 @@ const MediaContent = ({media}) => {
         }
     }, [])
 
-    console.log(media);
     return (
         <div>
             <Masonry
             breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
-                {urls.length > 0 ? urls.map(el => {
+                {urls.length > 0 ? urls.map((el, index) => {
+                    console.log(media.images[index].attrs);
                     return <ImageContainer><Image src={el} layout="fill" objectFit="cover" quality={60}/></ImageContainer>
                 }) : null}
             </Masonry>

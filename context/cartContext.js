@@ -21,13 +21,11 @@ const CartProvider = ({children}) => {
     }, [])
 
     const handleCheckout = async () => {
-        console.log('HANDLING CHEKOUT')
         let checkout = await client.checkout.create().then(chk => {
             return chk;
         })
 
         let itemsToAdd = cart.map(el => {
-            console.log(el)
             return {variantId: el[0], quantity: 1}
         });
 

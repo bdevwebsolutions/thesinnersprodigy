@@ -47,7 +47,7 @@ export const Sub = styled.div`
     grid-gap: 15px;
 
     @media only screen and (max-width: 1200px){
-        grid-template-rows: auto 400px;
+        grid-template-rows: auto 500px;
     }
 
 
@@ -118,11 +118,11 @@ export const Preview = styled.div`
     height: auto;
 
     @media only screen and (max-width: 1200px){
-        height: 400px;
+        height: 500px;
     }
 
     @media only screen and (max-width: 720px){
-        height: 200px;
+        height: 400px;
     }
 
 `

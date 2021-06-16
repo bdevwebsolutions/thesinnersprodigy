@@ -4,7 +4,8 @@ import {theme} from '../../styles/theme';
 export const Placer = styled.div`
     display: grid !important;
     width: 100%;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
+    
 
     p{
         display: inline-block !important;
@@ -18,10 +19,11 @@ export const Placer = styled.div`
     ul{
         display: inline-flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-between;
         width: auto;
         margin-bottom: 15px;
+
 
         li{
             font-size: 13px;
@@ -29,6 +31,7 @@ export const Placer = styled.div`
             cursor: pointer;
             margin-right: 5px !important;
             padding: 4px 10px;
+
         }
 
         li:first-of-type{
@@ -37,26 +40,35 @@ export const Placer = styled.div`
 
         li:last-of-type{
 
-            width: 60px;
-            height: 60px;
-            max-width: 60px;
-            max-height: 60px;
-            padding: 15px;
-            border-radius: 80px;
-            color: black;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: normal;
-            line-height: 30px;
-            z-index: 98;
 
-            @media only screen and (min-width: 721px){
-                position: fixed;
-                top: 40px;
-                right: 40px;
+
+            @media only screen and (min-width: 1500px){
+                width: 70%;
+                text-align: right;
+                padding-right: 15px;
+                line-height: 20px;
+            }
+
+            @media only screen and (min-width: 721px) and (max-width: 1499px){
+                width: 60%;
+                text-align: right;
+                padding-right: 15px;
+                line-height: 20px;
             }
 
             @media only screen and (max-width: 720px){
+                width: 60px;
+                height: 60px;
+                max-width: 60px;
+                max-height: 60px;
+                padding: 15px;
+                border-radius: 80px;
+                color: black;
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: normal;
+                line-height: 30px;
+                z-index: 98;
                 position: fixed;
                 bottom: 40px;
                 right: 20px;
@@ -71,6 +83,7 @@ export const Placer = styled.div`
             cursor: pointer;
             margin-right: 5px !important;
             padding: 4px 10px;
+            max-height: 26px;
         }
 
         a:last-of-type{
@@ -111,6 +124,7 @@ export const Placer = styled.div`
                 padding: 10px 5px;
                 display: block !important;
                 width: 100%;
+                max-height: none;
             }
 
         }
