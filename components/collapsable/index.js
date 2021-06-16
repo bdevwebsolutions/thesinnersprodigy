@@ -10,6 +10,7 @@ import {Container, Sub, List, Preview, MobileButton} from './styles';
 import { getCollections } from '../../lib/shopify';
 import Link from 'next/link';
 import { ItemsContext } from '../../context/itemsContext';
+import { useRouter } from 'next/router';
 
 
 //FETCH IMAGES FOR THE MENU
@@ -26,6 +27,9 @@ const Collapsable = ({visible, setVisible}) => {
         //CONTEXT
         const {initialData} = React.useContext(ItemsContext);
 
+        //router
+        const router = useRouter();
+
         useEffect(() => {
             //Images
             let d = initialData[0];
@@ -40,6 +44,12 @@ const Collapsable = ({visible, setVisible}) => {
             }
         }, [])
         //--------------
+
+        //Redirect on image click
+        const redirectOnImageClick = (category) => {
+            router.push(`/collection/${encodeURIComponent(category[0].handle)}/${encodeURIComponent(category[0].id)}`)
+            setVisible(false)
+        }
 
         //COLLECTIONS FOR ROUTING
         const [collections, setCollections] = useState({men: [], woman: [], accessories: [], new: []});
@@ -79,14 +89,14 @@ const Collapsable = ({visible, setVisible}) => {
                             {collections.new.map(el => {
                                 return <Link 
                                             key={el.handle} 
-                                            href={`/collection/${encodeURIComponent(el.title)}/${encodeURIComponent(el.id)}`}>
+                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
                                                 <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
                                         </Link>
                             })}
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 0 ? <Image src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 0 ? <Image onClick={() => {redirectOnImageClick(collections.new)}} src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -103,7 +113,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 1 ? <Image src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 1 ? <Image onClick={() => {redirectOnImageClick(collections.men)}} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -120,7 +130,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 2 ? <Image src={URLS[2] !== undefined ? URLS[2] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 2 ? <Image onClick={() => {redirectOnImageClick(collections.woman)}} src={URLS[2] !== undefined ? URLS[2] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -137,7 +147,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 3 ? <Image src={URLS[3] !== undefined ? URLS[3] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 3 ? <Image onClick={() => {redirectOnImageClick(collections.accessories)}} src={URLS[3] !== undefined ? URLS[3] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
             </Container>
