@@ -40,11 +40,11 @@ const Product = ({product}) => {
     return (
         <Container>
             <View>
-                <ImageGallery  
+                <ImageGallery 
                 showPlayButton={false} 
-                showFullscreenButton={false} 
+                showFullscreenButton={true} 
                 items={images}
-                infinite={false}
+                infinite={true}
                 />
             </View>
             <Info>

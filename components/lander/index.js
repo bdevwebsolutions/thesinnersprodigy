@@ -14,7 +14,7 @@ const Lander = () => {
         <Container>
             <Content>
                 <Screen/>
-                <button onClick={() => {router.push('/home')}}>CONTINUE</button>
+                <button onClick={() => {/*router.push('/home')*/}}>LIVE AT 19:00</button>
             </Content>
         </Container>
     )

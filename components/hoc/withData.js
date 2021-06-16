@@ -9,10 +9,14 @@ export const WithData = WrappedComponent => props => {
 
     React.useEffect(() => {
         let d = window.localStorage.getItem('tsp-data');
-        if(JSON.parse(d).length < 0){
+        if(d === null){
             router.push('/')
         } else {
-            setShow(true);
+            if(JSON.parse(d).length < 0){
+                router.push('/')
+            } else {
+                setShow(true);
+            }
         }
     }, [])
 
