@@ -7,6 +7,8 @@ import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import HomeContent from '../components/home';
 import {Marq} from '../components/marque';
+import {AiFillInstagram} from 'react-icons/ai'
+
 
 //hoc
 import {WithData} from '../components/hoc/withData';
@@ -23,7 +25,7 @@ const Home = () => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                promoter
+            <p>For more info contact us on <a href="https://www.instagram.com/thesinnersprodigy/" target="_blank">instagram <AiFillInstagram/></a></p>
             </ResponsiveContainer>
         </BodyContainer>
         </>
@@ -37,6 +39,7 @@ const BodyContainer = styled.div`
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh;
+    text-align: center;
     *{
         margin: 0;
         padding: 0;

@@ -22,7 +22,7 @@ const BottomBar = () => {
                 <ul>
                     <Link href="/become-a-promoter">Become a promoter</Link>
                     <Link href="/contact">Contact</Link>
-                    <Link target="_blank" href="https://www.instagram.com/thesinnersprodigy/">Instagram</Link>
+                    <Link href="https://www.instagram.com/thesinnersprodigy/" target="_blank">Instagram</Link>
                 </ul>
             </Sub>
             <Sub>
