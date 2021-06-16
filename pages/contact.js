@@ -6,6 +6,7 @@ import TopBar from '../components/topbar';
 import Nav from '../components/nav';
 import LoginContent from '../components/login';
 import {Marq} from '../components/marque';
+import {AiFillInstagram} from 'react-icons/ai'
 
 //hoc
 import {WithData} from '../components/hoc/withData';
@@ -20,7 +21,7 @@ const Login = () => {
                 <Nav/>
             </ResponsiveContainerFixed>
             <ResponsiveContainer>
-                <p>Our auth system will be coming soon.</p>
+            <p>For more info contact us on <a href="https://www.instagram.com/thesinnersprodigy/" target="_blank">instagram <AiFillInstagram/></a></p>
             </ResponsiveContainer>
         </BodyContainer>
         </>

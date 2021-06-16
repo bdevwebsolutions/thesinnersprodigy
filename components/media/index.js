@@ -30,7 +30,6 @@ const MediaContent = ({media}) => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
                 {urls.length > 0 ? urls.map((el, index) => {
-                    console.log(media.images[index].attrs);
                     return <ImageContainer><Image src={el} layout="fill" objectFit="cover" quality={60}/></ImageContainer>
                 }) : null}
             </Masonry>

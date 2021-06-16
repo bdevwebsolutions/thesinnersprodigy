@@ -96,7 +96,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 0 ? <Image placeholder='loading...' onClick={() => {redirectOnImageClick(collections.new)}} src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 0 ? <Image onClick={() => {redirectOnImageClick(collections.new)}} src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -113,7 +113,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 1 ? <Image placeholder='loading...' onClick={() => {redirectOnImageClick(collections.men)}} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 1 ? <Image onClick={() => {redirectOnImageClick(collections.men)}} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
