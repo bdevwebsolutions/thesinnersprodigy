@@ -40,6 +40,7 @@ export const Placer = styled.div`
 
         li:last-of-type{
 
+            font-size: 17px;
 
 
             @media only screen and (min-width: 1500px){
