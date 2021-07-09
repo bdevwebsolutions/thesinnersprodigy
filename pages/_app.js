@@ -31,6 +31,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <meta name="facebook-domain-verification" content="2bs2dwm5ldg9wveypmriguwayczuo5" />
+        <meta name="facebook-domain-verification" content="mi48dok2qu128br1525yx5shsbxd23" />
       </Head>
       <CartProvider>
         <ItemsProvider>
