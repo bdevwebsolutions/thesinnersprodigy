@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import {Carousel} from 'react-responsive-carousel';
 //Styles
-import {Container, SlideContainer, Slide, AboutContainer, HighlightContainer, HighLight, Text, SocialsContainer} from './styles';
+import {Container, SlideContainer, Slide, AboutContainer, HighlightContainer, HighLight} from './styles';
 
 //Components
 import Logo from '../../media/svg/logo.svg'
@@ -13,6 +13,7 @@ const SlideShow = ({image}) => {
 
     const [urls, setUrls] = React.useState([])
     React.useEffect(() => {
+        console.log(image);
         if(urls.length <= 0 ){
             image.images.map(el => {
                 setUrls(prevState => [...prevState, el.src])
@@ -22,10 +23,9 @@ const SlideShow = ({image}) => {
 
     const router = useRouter()
 
-    //<Image priority={true} src={urls[0]} layout="fill" objectFit="cover" ={30}/>
 
     const handleBuyButton = () => {
-        router.push('/collection/New%20arrival%20Tracksuits/Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3MDMwNTU5MTQ1OQ%3D%3D')
+        router.push('/collection/men-tracksuits/Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI3MDMwNTQ2MDM4Nw%3D%3D')
     }
 
     return(

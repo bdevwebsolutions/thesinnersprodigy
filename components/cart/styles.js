@@ -68,6 +68,10 @@ export const Item = styled.div`
         position: relative;
     }
 
+    img{
+        cursor: pointer !important;
+    }
+
     @media only screen and (max-width: 720px){
         grid-template-columns: 1fr 1fr 35px !important;
         grid-gap: 0px;

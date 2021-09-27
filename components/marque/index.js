@@ -132,16 +132,6 @@ export const Marq = () => {
                 <span> Want to be featured on the site? make sure to tag us or to use <b>#thesinnersprodigy</b> in your posts.</span>
                 <span> Follow us on instagram to stay up-to-date with all the upcoming releases.</span>
                 <span> Make sure to read the policy for all information about shipping and returns.</span>
-                <span> Want to be a promoter of the brand? Check the conditions on the bottom of the site.</span>
-                <span> Want early access to the limited pieces? Gain points with our prestige system, coming in the future.</span>
-                <span> Want to be featured on the site? make sure to tag us or to use <b>#thesinnersprodigy</b> in your posts.</span>
-                <span> Follow us on instagram to stay up-to-date with all the upcoming releases.</span>
-                <span> Make sure to read the policy for all information about shipping and returns.</span>
-                <span> Want to be a promoter of the brand? Check the conditions on the bottom of the site.</span>
-                <span> Want early access to the limited pieces? Gain points with our prestige system, coming in the future.</span>
-                <span> Want to be featured on the site? make sure to tag us or to use <b>#thesinnersprodigy</b> in your posts.</span>
-                <span> Follow us on instagram to stay up-to-date with all the upcoming releases.</span>
-                <span> Make sure to read the policy for all information about shipping and returns.</span>
             </Inner>
         </Container>
     )
@@ -157,7 +147,7 @@ const Container = styled.div`
     margin-bottom: 15px;
     background-color: white;
     color: black;
-    font-weight: bold;
+    font-weight: normal;
     
 `
 

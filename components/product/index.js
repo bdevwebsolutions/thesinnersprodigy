@@ -7,11 +7,12 @@ const Product = ({product}) => {
 
     const [variant, setVariant] = React.useState(product.variants[0].id)
     const [price, setPrice] = React.useState(product.variants[0].price)
-    const [title, setTitle] = React.useState(product.variants[0].title)
+    const [size, setSize] = React.useState(product.variants[0].title)
     const [added, setAdded] = React.useState(false);
     const [thumbnail, setThumbnail] = React.useState(product.images[0].src);;
     const [images, setImages] = React.useState([])
     const [available, setAvailable] = React.useState(true)
+    console.log(product);
     
 
     //CARTCONTEXT
@@ -19,11 +20,12 @@ const Product = ({product}) => {
 
     const selectVariant = (e) => {
         setVariant(e.target.value);
-        product.variants.map(el => {if(el.id === e.target.value){ setAvailable(el.available); setPrice(el.price); setTitle(el.title)} else {null}});
+        console.log(e.target.value);
+        product.variants.map(el => {if(el.id === e.target.value){ setAvailable(el.available); setPrice(el.price); setSize(el.title)} else {null}});
     }
 
     const addToCart = () => {
-        let p = [variant, price, product.title, thumbnail]
+        let p = [variant, price, product.title, thumbnail, size, product.handle, product.id];
         setCart([...cart, p]);
         setAdded(true);
         setTimeout(function(){ setAdded(false)}, 1000);

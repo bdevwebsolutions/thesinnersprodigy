@@ -5,21 +5,31 @@ import {AiOutlineClose} from 'react-icons/ai'
 
 //Compinents
 import {Container, Item, Checkout, Total, Titel, List} from './styles';
+import { useRouter } from 'next/router';
 
 const Cart = ({visible, setVisible}) => {
 
     const {cart, setCart, handleCheckout} = React.useContext(CartContext);
     const [list, setList] = React.useState([])
     const [total, setTotal] = React.useState(0);
+    const router = useRouter()
+
+    const redirect = async (id, handle) => {
+        console.log(id, handle)
+        await router.push(`/item/${handle}/${encodeURIComponent(id.slice(0, -1))}%3D`);
+        location.reload()
+    }
 
     //Create elements
     const createElements = (cart) => {
+
+        console.log(cart)
         let f = cart.map((el, index) => {
             return (
-                <Item key={index}>
-                    <p>{el[2]}<br></br><b>€{el[1]}</b></p>
+                <Item key={index} >
+                    <p>{el[2]} - {el[4]}<br></br><b>€{el[1]}</b></p>
                     <div>
-                        <Image src={el[3]} layout="fill" objectFit="contain"/>
+                        <Image onClick={() => redirect(el[6], el[5])} src={el[3]} layout="fill" objectFit="contain"/>
                     </div>
                     <button onClick={() => {removeFromCart(index)}}>X</button>
                 </Item>

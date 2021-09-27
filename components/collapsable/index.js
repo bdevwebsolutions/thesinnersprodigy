@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Image from 'next/image';
 
 
@@ -112,9 +112,9 @@ const Collapsable = ({visible, setVisible}) => {
                             })}
                         </ul>
                     </List>
-                    <Preview>
-                        {URLS.length > 1 ? <Image onClick={() => {redirectOnImageClick(collections.men)}} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
-                    </Preview>
+                        <Preview>
+                            {URLS.length > 1 ? <Image onClick={() => {redirectOnImageClick(collections.men)}} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
+                        </Preview>
                 </Sub>
                 <Sub>
                     <List>
