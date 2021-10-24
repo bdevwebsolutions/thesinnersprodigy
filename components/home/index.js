@@ -13,7 +13,6 @@ const SlideShow = ({image}) => {
 
     const [urls, setUrls] = React.useState([])
     React.useEffect(() => {
-        console.log(image);
         if(urls.length <= 0 ){
             image.images.map(el => {
                 setUrls(prevState => [...prevState, el.src])
@@ -32,7 +31,7 @@ const SlideShow = ({image}) => {
         <SlideContainer>
             <Carousel emulateTouch={true} showThumbs={false} showStatus={false}>
                 {urls ? urls.map((el, index) => {
-                    return <Slide><p onClick={ urls.length > 0 ? handleBuyButton : null}>SHOP NOW</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
+                    return <Slide key={el}><p>THE SINNERS PRODIGY</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
                 }): null}
             </Carousel>
         </SlideContainer>
@@ -70,8 +69,8 @@ const Higlights = ({image}) => {
         <HighlightContainer amount={urls.length}>
             {urls ? urls.map(el =>{
                 return (
-                <HighLight>
-                    <Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/>
+                <HighLight key={el}>
+                    <Image priority={true} priority={true} src={el} layout="fill" objectFit="cover" quality={60}/>
                 </HighLight>
                 )
             }) : null}

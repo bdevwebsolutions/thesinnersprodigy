@@ -4,16 +4,20 @@ import Link from 'next/link';
 import {Item, Container, Grid, Title} from './styles';
 
 export const Collection = ({items, title}) => {
+
+    console.log(items);
     return (
     <Container>
         <Title>{title}</Title>
         <Grid>
-            {items.map(el => {
+            {items.sort((a,b) => {
+                return new Date(a.createdAt) - new Date(b.createdAt);
+            }).reverse().map(el => {
                 return (
                 <Link href={`/item/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
                     <a>
                         <Item key={el.id}>
-                            <div><Image src={el.images[0].src} layout="fill" objectFit="cover"/></div>
+                            <div><Image priority={true} src={el.images[0].src} layout="fill" objectFit="cover"/></div>
                             <p>{el.title}</p>
                         </Item>
                     </a>

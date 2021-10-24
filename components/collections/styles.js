@@ -32,6 +32,9 @@ export const Item = styled.div`
 
 export const Container = styled.div`
     margin-bottom: 35px !important;
+    @media only screen and (max-width: 850px){
+        padding: 15px !important;
+    }
 `
 
 export const Title = styled.h3`

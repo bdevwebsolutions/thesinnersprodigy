@@ -16,7 +16,7 @@ import {WithData} from '../components/hoc/withData';
 const Home = (props) => {
 
     const {initialData} = React.useContext(ItemsContext);
-
+    console.log(initialData);
     return (
         <>
         <Marq/>

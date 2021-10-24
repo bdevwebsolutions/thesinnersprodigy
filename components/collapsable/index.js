@@ -96,7 +96,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 0 ? <Image onClick={() => {redirectOnImageClick(collections.new)}} src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 0 ? <Image priority={true} src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -113,7 +113,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                         <Preview>
-                            {URLS.length > 1 ? <Image onClick={() => {redirectOnImageClick(collections.men)}} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
+                            {URLS.length > 1 ? <Image priority={true} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
                         </Preview>
                 </Sub>
                 <Sub>
@@ -130,7 +130,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 2 ? <Image onClick={() => {redirectOnImageClick(collections.woman)}} src={URLS[2] !== undefined ? URLS[2] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 2 ? <Image priority={true} src={URLS[2] !== undefined ? URLS[2] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
                 <Sub>
@@ -147,7 +147,7 @@ const Collapsable = ({visible, setVisible}) => {
                         </ul>
                     </List>
                     <Preview>
-                        {URLS.length > 3 ? <Image onClick={() => {redirectOnImageClick(collections.accessories)}} src={URLS[3] !== undefined ? URLS[3] : ""} layout="fill" objectFit="cover"/> : ""}
+                        {URLS.length > 3 ? <Image priority={true} src={URLS[3] !== undefined ? URLS[3] : ""} layout="fill" objectFit="cover"/> : ""}
                     </Preview>
                 </Sub>
             </Container>

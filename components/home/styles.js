@@ -19,20 +19,14 @@ export const Slide = styled.div`
     align-items: center;
     justify-items: center;
 
-    :hover{
-            p{
-                opacity: 1;
-            }
-    }
-
     p{
         position: absolute;
         z-index: 10;
         color: white;
         padding: 15px;
         background-color: black;
-        opacity: 0.4;
-        cursor: pointer;
+        opacity: 1;
+        cursor: default;
         
     }
 `

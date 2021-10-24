@@ -116,7 +116,6 @@ export const Preview = styled.div`
     position: relative;
     width: 100%;
     height: auto;
-    cursor: pointer;
 
     @media only screen and (max-width: 1200px){
         height: 500px;

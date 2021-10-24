@@ -29,7 +29,7 @@ const Cart = ({visible, setVisible}) => {
                 <Item key={index} >
                     <p>{el[2]} - {el[4]}<br></br><b>€{el[1]}</b></p>
                     <div>
-                        <Image onClick={() => redirect(el[6], el[5])} src={el[3]} layout="fill" objectFit="contain"/>
+                        <Image priority={true} onClick={() => redirect(el[6], el[5])} src={el[3]} layout="fill" objectFit="contain"/>
                     </div>
                     <button onClick={() => {removeFromCart(index)}}>X</button>
                 </Item>
