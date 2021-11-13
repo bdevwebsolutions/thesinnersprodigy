@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 
 //Components
-import {Container, Sub, List, Preview, MobileButton} from './styles';
+import {Container, Routing, List, Images, MobileButton} from './styles';
 
 
 //DATA FETCHING
@@ -11,6 +11,7 @@ import { getCollections } from '../../lib/shopify';
 import Link from 'next/link';
 import { ItemsContext } from '../../context/itemsContext';
 import { useRouter } from 'next/router';
+
 
 
 //FETCH IMAGES FOR THE MENU
@@ -43,22 +44,33 @@ const Collapsable = ({visible, setVisible}) => {
                 setShowMobileButton(true)
             }
         }, [])
-        //--------------
-
-        //Redirect on image click
-        const redirectOnImageClick = (category) => {
-            router.push(`/collection/${encodeURIComponent(category[0].handle)}/${encodeURIComponent(category[0].id)}`)
-            setVisible(false)
-        }
 
         //COLLECTIONS FOR ROUTING
-        const [collections, setCollections] = useState({men: [], woman: [], accessories: [], new: []});
+        const [collections, setCollections] = useState({
+            men: [], 
+            woman: [], 
+            accessories: [], 
+            new: [],
+            sale: [],
+            all: [],
+            collections: [],
+        });
 
         useEffect(async () => {
             let d = await getCollections();
-            
+
             //SPLIT INTO SUB
-            let res = {men: [], woman: [], accessories: [], new: []};
+            let res = {
+                men: [], 
+                woman: [], 
+                accessories: [], 
+                new: [],
+                sale: [],
+                all: [],
+                collections: [],
+            };
+
+            console.log(d);
 
             d.map(el => {
                 if(el.handle === "nav"){
@@ -71,6 +83,12 @@ const Collapsable = ({visible, setVisible}) => {
                     res.accessories.push(el)
                 } else if (el.title.includes('New')){
                     res.new.push(el);
+                } else if (el.title.includes('Sale')){
+                    res.sale.push(el);
+                } else if (el.title.includes('All')){
+                    res.all.push(el);
+                } else if (el.title.includes('Collections')){
+                    res.collections.push(el);
                 }
             })
 
@@ -82,7 +100,7 @@ const Collapsable = ({visible, setVisible}) => {
         return (
             <Container trigger={visible}>
                 {showMobileButton ? <MobileButton onClick={() => {setVisible(false)}}>CLOSE</MobileButton> : null}
-                <Sub>
+                <Routing>
                     <List>
                         <p>NEW ARRIVALS</p>
                         <ul>
@@ -95,11 +113,6 @@ const Collapsable = ({visible, setVisible}) => {
                             })}
                         </ul>
                     </List>
-                    <Preview>
-                        {URLS.length > 0 ? <Image priority={true} src={URLS[0] !== undefined ? URLS[0] : ""} layout="fill" objectFit="cover"/> : ""}
-                    </Preview>
-                </Sub>
-                <Sub>
                     <List>
                         <p>MEN</p>
                         <ul>
@@ -112,11 +125,6 @@ const Collapsable = ({visible, setVisible}) => {
                             })}
                         </ul>
                     </List>
-                        <Preview>
-                            {URLS.length > 1 ? <Image priority={true} src={URLS[1] !== undefined ? URLS[1] : ""} layout="fill" objectFit="cover"/> : ""}
-                        </Preview>
-                </Sub>
-                <Sub>
                     <List>
                         <p>WOMEN</p>
                         <ul>
@@ -129,27 +137,61 @@ const Collapsable = ({visible, setVisible}) => {
                             })}
                         </ul>
                     </List>
-                    <Preview>
-                        {URLS.length > 2 ? <Image priority={true} src={URLS[2] !== undefined ? URLS[2] : ""} layout="fill" objectFit="cover"/> : ""}
-                    </Preview>
-                </Sub>
-                <Sub>
                     <List>
                         <p>ACCESSORIES</p>
                         <ul>
-                        {collections.accessories.map(el => {
+                            {collections.accessories.map(el => {
+                                    return <Link 
+                                                key={el.handle} 
+                                                href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                                    <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
+                                            </Link>
+                            })}
+                        </ul>
+                    </List>
+                    <List>
+                        <p>SALE</p>
+                        <ul>
+                            {collections.sale.map(el => {
                                 return <Link 
                                             key={el.handle} 
                                             href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
                                                 <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
                                         </Link>
-                        })}
+                            })}
                         </ul>
                     </List>
-                    <Preview>
-                        {URLS.length > 3 ? <Image priority={true} src={URLS[3] !== undefined ? URLS[3] : ""} layout="fill" objectFit="cover"/> : ""}
-                    </Preview>
-                </Sub>
+                    <List>
+                        <p>ALL</p>
+                        <ul>
+                            {collections.all.map(el => {
+                                return <Link 
+                                            key={el.handle} 
+                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                                <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
+                                        </Link>
+                            })}
+                        </ul>
+                    </List>
+                    <List>
+                        <p>COLLECTIONS</p>
+                        <ul>
+                            {collections.collections.map(el => {
+                                return <Link 
+                                            key={el.handle} 
+                                            href={`/collection/${encodeURIComponent(el.handle)}/${encodeURIComponent(el.id)}`}>
+                                                <li onClick={() => {setVisible(!visible)}}>{el.description}</li>
+                                        </Link>
+                            })}
+                        </ul>
+                    </List>
+                </Routing>
+                <Images>
+                    <div>{URLS.length > 0 ? <Image priority={true} src={URLS[0] !== undefined ? URLS[0] : ""} quality={50} layout="fill" objectFit="cover"/> : ""}</div>
+                    <div>{URLS.length > 1 ? <Image priority={true} src={URLS[1] !== undefined ? URLS[1] : ""} quality={50} layout="fill" objectFit="cover"/> : ""}</div>
+                    <div>{URLS.length > 2 ? <Image priority={true} src={URLS[2] !== undefined ? URLS[2] : ""} quality={50} layout="fill" objectFit="cover"/> : ""}</div>
+                    <div>{URLS.length > 3 ? <Image priority={true} src={URLS[3] !== undefined ? URLS[3] : ""} quality={50} layout="fill" objectFit="cover"/> : ""}</div>
+                </Images>
             </Container>
         )
 

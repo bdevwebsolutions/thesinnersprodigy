@@ -31,7 +31,7 @@ const SlideShow = ({image}) => {
         <SlideContainer>
             <Carousel emulateTouch={true} showThumbs={false} showStatus={false}>
                 {urls ? urls.map((el, index) => {
-                    return <Slide key={el}><p>THE SINNERS PRODIGY</p><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
+                    return <Slide key={el}><Image priority={true} src={el} layout="fill" objectFit="cover" quality={60}/></Slide>
                 }): null}
             </Carousel>
         </SlideContainer>
